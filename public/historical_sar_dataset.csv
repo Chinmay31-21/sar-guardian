@@ -1,0 +1,801 @@
+sar_id,typology,country,risk_score,narrative
+SAR21000,Crypto Laundering,RU,0.75,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21001,Shell Company Transfers,KY,0.86,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21002,Rapid Movement of Funds,UK,0.85,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21003,Round Tripping,AE,0.72,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21004,Trade Based Money Laundering,SG,0.67,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21005,Layering,AE,0.85,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21006,Crypto Laundering,US,0.69,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21007,Rapid Movement of Funds,UK,0.72,Large sums were moved across several jurisdictions within short time intervals.
+SAR21008,Crypto Laundering,US,0.87,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21009,Round Tripping,IN,0.88,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21010,Shell Company Transfers,KY,0.86,Large sums were moved across several jurisdictions within short time intervals.
+SAR21011,Trade Based Money Laundering,RU,0.79,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21012,Structuring,KY,0.85,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21013,Rapid Movement of Funds,RU,0.89,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21014,Crypto Laundering,KY,0.83,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21015,Trade Based Money Laundering,US,0.96,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21016,Crypto Laundering,AE,0.87,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21017,Rapid Movement of Funds,IN,0.89,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21018,Layering,US,0.88,Large sums were moved across several jurisdictions within short time intervals.
+SAR21019,Shell Company Transfers,UK,0.84,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21020,Crypto Laundering,RU,0.7,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21021,Rapid Movement of Funds,KY,0.7,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21022,Crypto Laundering,KY,0.9,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21023,Round Tripping,SG,0.75,Large sums were moved across several jurisdictions within short time intervals.
+SAR21024,Layering,UK,0.98,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21025,Structuring,UK,0.94,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21026,Rapid Movement of Funds,US,0.91,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21027,Crypto Laundering,UK,0.68,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21028,Layering,NG,0.85,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21029,Structuring,IN,0.9,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21030,Trade Based Money Laundering,RU,0.66,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21031,Structuring,NG,0.91,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21032,Layering,NG,0.87,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21033,Layering,KY,0.84,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21034,Shell Company Transfers,UK,0.87,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21035,Rapid Movement of Funds,KY,0.67,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21036,Crypto Laundering,KY,0.7,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21037,Round Tripping,RU,0.79,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21038,Mule Account,KY,0.95,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21039,Layering,RU,0.67,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21040,Trade Based Money Laundering,SG,0.84,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21041,Shell Company Transfers,KY,0.76,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21042,Mule Account,UK,0.84,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21043,Structuring,IN,0.69,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21044,Round Tripping,SG,0.93,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21045,Shell Company Transfers,RU,0.84,Large sums were moved across several jurisdictions within short time intervals.
+SAR21046,Shell Company Transfers,KY,0.95,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21047,Crypto Laundering,UK,0.73,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21048,Rapid Movement of Funds,IN,0.93,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21049,Trade Based Money Laundering,KY,0.84,Large sums were moved across several jurisdictions within short time intervals.
+SAR21050,Round Tripping,US,0.74,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21051,Mule Account,AE,0.91,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21052,Rapid Movement of Funds,UK,0.66,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21053,Rapid Movement of Funds,UK,0.78,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21054,Layering,IN,0.96,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21055,Shell Company Transfers,UK,0.86,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21056,Round Tripping,NG,0.68,Large sums were moved across several jurisdictions within short time intervals.
+SAR21057,Round Tripping,SG,0.97,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21058,Crypto Laundering,NG,0.96,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21059,Crypto Laundering,NG,0.97,Large sums were moved across several jurisdictions within short time intervals.
+SAR21060,Structuring,RU,0.74,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21061,Layering,IN,0.95,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21062,Shell Company Transfers,RU,0.91,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21063,Rapid Movement of Funds,US,0.68,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21064,Rapid Movement of Funds,UK,0.79,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21065,Mule Account,UK,0.86,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21066,Rapid Movement of Funds,SG,0.8,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21067,Crypto Laundering,IN,0.7,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21068,Mule Account,IN,0.87,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21069,Shell Company Transfers,RU,0.93,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21070,Shell Company Transfers,UK,0.82,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21071,Mule Account,AE,0.95,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21072,Structuring,AE,0.78,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21073,Layering,IN,0.73,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21074,Structuring,KY,0.79,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21075,Trade Based Money Laundering,IN,0.9,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21076,Trade Based Money Laundering,IN,0.73,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21077,Layering,AE,0.97,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21078,Round Tripping,SG,0.86,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21079,Round Tripping,NG,0.95,Large sums were moved across several jurisdictions within short time intervals.
+SAR21080,Shell Company Transfers,US,0.7,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21081,Mule Account,UK,0.68,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21082,Shell Company Transfers,RU,0.71,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21083,Mule Account,SG,0.93,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21084,Mule Account,US,0.93,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21085,Shell Company Transfers,IN,0.96,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21086,Round Tripping,SG,0.96,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21087,Rapid Movement of Funds,SG,0.8,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21088,Structuring,IN,0.91,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21089,Rapid Movement of Funds,KY,0.7,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21090,Rapid Movement of Funds,SG,0.97,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21091,Shell Company Transfers,NG,0.81,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21092,Structuring,KY,0.79,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21093,Mule Account,US,0.92,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21094,Trade Based Money Laundering,IN,0.73,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21095,Layering,KY,0.87,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21096,Shell Company Transfers,US,0.9,Large sums were moved across several jurisdictions within short time intervals.
+SAR21097,Shell Company Transfers,IN,0.95,Large sums were moved across several jurisdictions within short time intervals.
+SAR21098,Structuring,NG,0.86,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21099,Crypto Laundering,SG,0.97,Large sums were moved across several jurisdictions within short time intervals.
+SAR21100,Shell Company Transfers,SG,0.89,Large sums were moved across several jurisdictions within short time intervals.
+SAR21101,Structuring,SG,0.72,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21102,Mule Account,US,0.67,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21103,Round Tripping,IN,0.86,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21104,Shell Company Transfers,IN,0.97,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21105,Shell Company Transfers,UK,0.85,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21106,Crypto Laundering,KY,0.95,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21107,Crypto Laundering,KY,0.88,Large sums were moved across several jurisdictions within short time intervals.
+SAR21108,Rapid Movement of Funds,AE,0.88,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21109,Mule Account,IN,0.66,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21110,Mule Account,US,0.9,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21111,Shell Company Transfers,NG,0.74,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21112,Structuring,US,0.91,Large sums were moved across several jurisdictions within short time intervals.
+SAR21113,Layering,US,0.86,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21114,Rapid Movement of Funds,NG,0.73,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21115,Structuring,SG,0.85,Large sums were moved across several jurisdictions within short time intervals.
+SAR21116,Layering,AE,0.85,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21117,Mule Account,SG,0.85,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21118,Round Tripping,US,0.87,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21119,Crypto Laundering,AE,0.88,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21120,Crypto Laundering,NG,0.67,Large sums were moved across several jurisdictions within short time intervals.
+SAR21121,Rapid Movement of Funds,KY,0.95,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21122,Structuring,SG,0.66,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21123,Structuring,UK,0.89,Large sums were moved across several jurisdictions within short time intervals.
+SAR21124,Rapid Movement of Funds,UK,0.96,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21125,Mule Account,RU,0.75,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21126,Structuring,AE,0.81,Large sums were moved across several jurisdictions within short time intervals.
+SAR21127,Structuring,IN,0.73,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21128,Round Tripping,SG,0.9,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21129,Rapid Movement of Funds,AE,0.8,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21130,Shell Company Transfers,US,0.81,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21131,Trade Based Money Laundering,IN,0.86,Large sums were moved across several jurisdictions within short time intervals.
+SAR21132,Rapid Movement of Funds,NG,0.66,Large sums were moved across several jurisdictions within short time intervals.
+SAR21133,Layering,AE,0.94,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21134,Mule Account,RU,0.87,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21135,Mule Account,UK,0.93,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21136,Trade Based Money Laundering,SG,0.69,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21137,Layering,RU,0.93,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21138,Structuring,KY,0.86,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21139,Crypto Laundering,RU,0.81,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21140,Trade Based Money Laundering,IN,0.82,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21141,Mule Account,NG,0.75,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21142,Mule Account,NG,0.88,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21143,Crypto Laundering,RU,0.84,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21144,Mule Account,NG,0.7,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21145,Trade Based Money Laundering,AE,0.73,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21146,Layering,NG,0.9,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21147,Shell Company Transfers,RU,0.69,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21148,Crypto Laundering,SG,0.81,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21149,Rapid Movement of Funds,SG,0.77,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21150,Crypto Laundering,SG,0.92,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21151,Trade Based Money Laundering,UK,0.94,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21152,Rapid Movement of Funds,IN,0.67,Large sums were moved across several jurisdictions within short time intervals.
+SAR21153,Round Tripping,SG,0.77,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21154,Trade Based Money Laundering,UK,0.75,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21155,Crypto Laundering,RU,0.97,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21156,Trade Based Money Laundering,IN,0.96,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21157,Trade Based Money Laundering,UK,0.65,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21158,Rapid Movement of Funds,US,0.66,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21159,Rapid Movement of Funds,SG,0.71,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21160,Trade Based Money Laundering,IN,0.86,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21161,Mule Account,IN,0.76,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21162,Layering,NG,0.72,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21163,Structuring,RU,0.86,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21164,Round Tripping,RU,0.82,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21165,Shell Company Transfers,RU,0.85,Large sums were moved across several jurisdictions within short time intervals.
+SAR21166,Shell Company Transfers,RU,0.85,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21167,Trade Based Money Laundering,IN,0.93,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21168,Crypto Laundering,UK,0.97,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21169,Crypto Laundering,NG,0.89,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21170,Mule Account,IN,0.81,Large sums were moved across several jurisdictions within short time intervals.
+SAR21171,Crypto Laundering,AE,0.74,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21172,Layering,NG,0.95,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21173,Round Tripping,NG,0.9,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21174,Crypto Laundering,US,0.83,Large sums were moved across several jurisdictions within short time intervals.
+SAR21175,Round Tripping,UK,0.86,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21176,Mule Account,NG,0.9,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21177,Shell Company Transfers,UK,0.87,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21178,Trade Based Money Laundering,RU,0.78,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21179,Rapid Movement of Funds,NG,0.89,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21180,Shell Company Transfers,UK,0.95,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21181,Shell Company Transfers,AE,0.91,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21182,Rapid Movement of Funds,IN,0.81,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21183,Crypto Laundering,US,0.77,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21184,Structuring,IN,0.8,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21185,Mule Account,IN,0.79,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21186,Trade Based Money Laundering,AE,0.86,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21187,Structuring,SG,0.87,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21188,Mule Account,UK,0.9,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21189,Structuring,IN,0.8,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21190,Crypto Laundering,KY,0.91,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21191,Mule Account,AE,0.81,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21192,Round Tripping,NG,0.85,Large sums were moved across several jurisdictions within short time intervals.
+SAR21193,Trade Based Money Laundering,NG,0.98,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21194,Rapid Movement of Funds,IN,0.84,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21195,Structuring,UK,0.91,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21196,Round Tripping,NG,0.89,Large sums were moved across several jurisdictions within short time intervals.
+SAR21197,Crypto Laundering,AE,0.91,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21198,Structuring,NG,0.82,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21199,Round Tripping,RU,0.79,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21200,Rapid Movement of Funds,NG,0.97,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21201,Layering,AE,0.82,Large sums were moved across several jurisdictions within short time intervals.
+SAR21202,Layering,KY,0.95,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21203,Crypto Laundering,RU,0.8,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21204,Trade Based Money Laundering,US,0.83,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21205,Layering,NG,0.7,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21206,Trade Based Money Laundering,RU,0.86,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21207,Layering,IN,0.74,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21208,Mule Account,KY,0.97,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21209,Shell Company Transfers,RU,0.82,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21210,Rapid Movement of Funds,IN,0.71,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21211,Mule Account,US,0.66,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21212,Layering,AE,0.89,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21213,Crypto Laundering,AE,0.79,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21214,Crypto Laundering,KY,0.83,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21215,Mule Account,US,0.82,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21216,Trade Based Money Laundering,IN,0.91,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21217,Shell Company Transfers,SG,0.67,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21218,Mule Account,RU,0.9,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21219,Rapid Movement of Funds,RU,0.97,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21220,Crypto Laundering,KY,0.94,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21221,Shell Company Transfers,AE,0.77,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21222,Mule Account,AE,0.91,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21223,Round Tripping,NG,0.96,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21224,Structuring,UK,0.75,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21225,Shell Company Transfers,IN,0.69,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21226,Structuring,IN,0.81,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21227,Round Tripping,UK,0.67,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21228,Shell Company Transfers,UK,0.74,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21229,Trade Based Money Laundering,NG,0.72,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21230,Round Tripping,IN,0.71,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21231,Shell Company Transfers,UK,0.73,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21232,Mule Account,NG,0.94,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21233,Rapid Movement of Funds,RU,0.75,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21234,Layering,RU,0.92,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21235,Structuring,IN,0.75,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21236,Rapid Movement of Funds,US,0.95,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21237,Layering,IN,0.91,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21238,Mule Account,UK,0.86,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21239,Rapid Movement of Funds,US,0.67,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21240,Crypto Laundering,US,0.81,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21241,Structuring,SG,0.76,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21242,Round Tripping,UK,0.74,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21243,Mule Account,US,0.96,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21244,Structuring,SG,0.73,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21245,Mule Account,AE,0.93,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21246,Layering,AE,0.71,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21247,Round Tripping,KY,0.87,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21248,Layering,NG,0.88,Large sums were moved across several jurisdictions within short time intervals.
+SAR21249,Trade Based Money Laundering,NG,0.95,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21250,Crypto Laundering,IN,0.86,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21251,Trade Based Money Laundering,SG,0.78,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21252,Shell Company Transfers,NG,0.75,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21253,Rapid Movement of Funds,AE,0.77,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21254,Layering,KY,0.82,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21255,Mule Account,NG,0.87,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21256,Round Tripping,UK,0.86,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21257,Rapid Movement of Funds,NG,0.97,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21258,Mule Account,KY,0.66,Large sums were moved across several jurisdictions within short time intervals.
+SAR21259,Crypto Laundering,IN,0.79,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21260,Layering,UK,0.92,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21261,Crypto Laundering,IN,0.75,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21262,Rapid Movement of Funds,RU,0.88,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21263,Layering,UK,0.93,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21264,Round Tripping,US,0.98,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21265,Shell Company Transfers,UK,0.98,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21266,Structuring,KY,0.82,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21267,Shell Company Transfers,US,0.81,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21268,Shell Company Transfers,US,0.97,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21269,Trade Based Money Laundering,US,0.9,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21270,Crypto Laundering,NG,0.72,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21271,Layering,AE,0.84,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21272,Trade Based Money Laundering,US,0.72,Large sums were moved across several jurisdictions within short time intervals.
+SAR21273,Structuring,SG,0.83,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21274,Shell Company Transfers,UK,0.92,Large sums were moved across several jurisdictions within short time intervals.
+SAR21275,Layering,IN,0.78,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21276,Round Tripping,IN,0.94,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21277,Trade Based Money Laundering,NG,0.79,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21278,Rapid Movement of Funds,NG,0.71,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21279,Crypto Laundering,AE,0.95,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21280,Crypto Laundering,US,0.68,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21281,Shell Company Transfers,SG,0.84,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21282,Structuring,KY,0.73,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21283,Rapid Movement of Funds,IN,0.87,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21284,Mule Account,US,0.68,Large sums were moved across several jurisdictions within short time intervals.
+SAR21285,Structuring,RU,0.91,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21286,Crypto Laundering,NG,0.97,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21287,Structuring,IN,0.76,Large sums were moved across several jurisdictions within short time intervals.
+SAR21288,Layering,RU,0.73,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21289,Mule Account,IN,0.76,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21290,Shell Company Transfers,UK,0.79,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21291,Layering,UK,0.83,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21292,Shell Company Transfers,NG,0.96,Large sums were moved across several jurisdictions within short time intervals.
+SAR21293,Trade Based Money Laundering,AE,0.88,Large sums were moved across several jurisdictions within short time intervals.
+SAR21294,Round Tripping,UK,0.85,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21295,Layering,SG,0.71,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21296,Layering,IN,0.69,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21297,Shell Company Transfers,US,0.88,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21298,Trade Based Money Laundering,NG,0.86,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21299,Trade Based Money Laundering,AE,0.79,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21300,Crypto Laundering,SG,0.74,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21301,Structuring,RU,0.7,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21302,Structuring,US,0.91,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21303,Trade Based Money Laundering,AE,0.77,Large sums were moved across several jurisdictions within short time intervals.
+SAR21304,Shell Company Transfers,AE,0.72,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21305,Structuring,RU,0.75,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21306,Trade Based Money Laundering,KY,0.95,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21307,Structuring,NG,0.69,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21308,Mule Account,NG,0.94,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21309,Mule Account,US,0.87,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21310,Mule Account,NG,0.93,Large sums were moved across several jurisdictions within short time intervals.
+SAR21311,Shell Company Transfers,UK,0.78,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21312,Shell Company Transfers,SG,0.65,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21313,Crypto Laundering,AE,0.94,Large sums were moved across several jurisdictions within short time intervals.
+SAR21314,Shell Company Transfers,NG,0.95,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21315,Crypto Laundering,RU,0.65,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21316,Round Tripping,SG,0.89,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21317,Round Tripping,SG,0.84,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21318,Rapid Movement of Funds,RU,0.82,Large sums were moved across several jurisdictions within short time intervals.
+SAR21319,Round Tripping,AE,0.76,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21320,Structuring,IN,0.68,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21321,Crypto Laundering,KY,0.77,Large sums were moved across several jurisdictions within short time intervals.
+SAR21322,Crypto Laundering,UK,0.84,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21323,Crypto Laundering,KY,0.73,Large sums were moved across several jurisdictions within short time intervals.
+SAR21324,Layering,KY,0.98,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21325,Shell Company Transfers,IN,0.66,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21326,Round Tripping,KY,0.7,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21327,Crypto Laundering,US,0.83,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21328,Round Tripping,US,0.88,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21329,Crypto Laundering,KY,0.83,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21330,Mule Account,UK,0.84,Large sums were moved across several jurisdictions within short time intervals.
+SAR21331,Shell Company Transfers,KY,0.72,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21332,Round Tripping,UK,0.7,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21333,Mule Account,KY,0.73,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21334,Shell Company Transfers,RU,0.82,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21335,Crypto Laundering,AE,0.73,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21336,Mule Account,US,0.81,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21337,Crypto Laundering,NG,0.65,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21338,Layering,UK,0.96,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21339,Shell Company Transfers,AE,0.97,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21340,Layering,RU,0.7,Large sums were moved across several jurisdictions within short time intervals.
+SAR21341,Structuring,UK,0.97,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21342,Trade Based Money Laundering,IN,0.74,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21343,Crypto Laundering,KY,0.85,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21344,Trade Based Money Laundering,AE,0.7,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21345,Layering,UK,0.94,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21346,Crypto Laundering,IN,0.75,Large sums were moved across several jurisdictions within short time intervals.
+SAR21347,Structuring,UK,0.96,Large sums were moved across several jurisdictions within short time intervals.
+SAR21348,Shell Company Transfers,AE,0.78,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21349,Trade Based Money Laundering,UK,0.83,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21350,Round Tripping,SG,0.73,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21351,Crypto Laundering,AE,0.83,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21352,Rapid Movement of Funds,NG,0.69,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21353,Mule Account,RU,0.78,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21354,Mule Account,US,0.74,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21355,Shell Company Transfers,US,0.7,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21356,Mule Account,NG,0.7,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21357,Round Tripping,KY,0.79,Large sums were moved across several jurisdictions within short time intervals.
+SAR21358,Round Tripping,US,0.78,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21359,Round Tripping,UK,0.68,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21360,Round Tripping,UK,0.79,Large sums were moved across several jurisdictions within short time intervals.
+SAR21361,Mule Account,UK,0.79,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21362,Rapid Movement of Funds,SG,0.89,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21363,Layering,SG,0.97,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21364,Structuring,RU,0.83,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21365,Trade Based Money Laundering,RU,0.92,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21366,Round Tripping,RU,0.9,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21367,Layering,US,0.77,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21368,Crypto Laundering,KY,0.87,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21369,Crypto Laundering,US,0.67,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21370,Structuring,US,0.88,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21371,Trade Based Money Laundering,AE,0.97,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21372,Mule Account,SG,0.97,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21373,Layering,RU,0.72,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21374,Mule Account,NG,0.87,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21375,Layering,UK,0.92,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21376,Shell Company Transfers,KY,0.91,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21377,Structuring,RU,0.8,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21378,Shell Company Transfers,SG,0.92,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21379,Structuring,RU,0.67,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21380,Structuring,US,0.78,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21381,Structuring,AE,0.71,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21382,Structuring,IN,0.8,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21383,Structuring,IN,0.69,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21384,Mule Account,UK,0.96,Large sums were moved across several jurisdictions within short time intervals.
+SAR21385,Mule Account,AE,0.89,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21386,Layering,KY,0.97,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21387,Mule Account,KY,0.76,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21388,Crypto Laundering,SG,0.72,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21389,Layering,RU,0.81,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21390,Rapid Movement of Funds,UK,0.75,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21391,Shell Company Transfers,AE,0.93,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21392,Mule Account,AE,0.98,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21393,Structuring,SG,0.93,Large sums were moved across several jurisdictions within short time intervals.
+SAR21394,Crypto Laundering,KY,0.67,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21395,Crypto Laundering,IN,0.67,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21396,Layering,RU,0.96,Large sums were moved across several jurisdictions within short time intervals.
+SAR21397,Structuring,US,0.73,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21398,Round Tripping,KY,0.66,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21399,Structuring,RU,0.94,Large sums were moved across several jurisdictions within short time intervals.
+SAR21400,Layering,US,0.9,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21401,Layering,RU,0.7,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21402,Crypto Laundering,UK,0.94,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21403,Shell Company Transfers,NG,0.92,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21404,Mule Account,NG,0.92,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21405,Mule Account,RU,0.67,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21406,Shell Company Transfers,RU,0.7,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21407,Layering,UK,0.88,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21408,Crypto Laundering,AE,0.93,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21409,Shell Company Transfers,AE,0.81,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21410,Shell Company Transfers,IN,0.78,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21411,Crypto Laundering,US,0.71,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21412,Structuring,IN,0.79,Large sums were moved across several jurisdictions within short time intervals.
+SAR21413,Structuring,SG,0.84,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21414,Crypto Laundering,US,0.8,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21415,Rapid Movement of Funds,IN,0.78,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21416,Shell Company Transfers,UK,0.85,Large sums were moved across several jurisdictions within short time intervals.
+SAR21417,Round Tripping,IN,0.98,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21418,Rapid Movement of Funds,AE,0.86,Large sums were moved across several jurisdictions within short time intervals.
+SAR21419,Layering,IN,0.81,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21420,Trade Based Money Laundering,NG,0.97,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21421,Rapid Movement of Funds,US,0.81,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21422,Layering,SG,0.72,Large sums were moved across several jurisdictions within short time intervals.
+SAR21423,Rapid Movement of Funds,AE,0.68,Large sums were moved across several jurisdictions within short time intervals.
+SAR21424,Shell Company Transfers,UK,0.94,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21425,Shell Company Transfers,RU,0.79,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21426,Crypto Laundering,AE,0.85,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21427,Structuring,UK,0.89,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21428,Structuring,NG,0.68,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21429,Rapid Movement of Funds,RU,0.72,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21430,Structuring,KY,0.73,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21431,Rapid Movement of Funds,AE,0.92,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21432,Mule Account,US,0.96,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21433,Round Tripping,IN,0.9,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21434,Mule Account,NG,0.77,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21435,Layering,US,0.66,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21436,Mule Account,RU,0.69,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21437,Crypto Laundering,NG,0.74,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21438,Crypto Laundering,NG,0.78,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21439,Structuring,AE,0.77,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21440,Layering,KY,0.68,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21441,Shell Company Transfers,AE,0.71,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21442,Shell Company Transfers,RU,0.96,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21443,Rapid Movement of Funds,UK,0.81,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21444,Structuring,NG,0.94,Large sums were moved across several jurisdictions within short time intervals.
+SAR21445,Crypto Laundering,NG,0.88,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21446,Trade Based Money Laundering,AE,0.74,Large sums were moved across several jurisdictions within short time intervals.
+SAR21447,Mule Account,KY,0.77,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21448,Rapid Movement of Funds,RU,0.67,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21449,Rapid Movement of Funds,KY,0.69,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21450,Rapid Movement of Funds,IN,0.76,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21451,Structuring,KY,0.97,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21452,Crypto Laundering,RU,0.97,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21453,Round Tripping,US,0.78,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21454,Trade Based Money Laundering,RU,0.71,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21455,Rapid Movement of Funds,RU,0.69,Large sums were moved across several jurisdictions within short time intervals.
+SAR21456,Structuring,UK,0.98,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21457,Crypto Laundering,RU,0.71,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21458,Trade Based Money Laundering,NG,0.77,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21459,Crypto Laundering,AE,0.73,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21460,Layering,RU,0.75,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21461,Trade Based Money Laundering,KY,0.84,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21462,Mule Account,AE,0.8,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21463,Crypto Laundering,UK,0.87,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21464,Crypto Laundering,NG,0.79,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21465,Layering,RU,0.67,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21466,Mule Account,KY,0.8,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21467,Trade Based Money Laundering,US,0.78,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21468,Rapid Movement of Funds,IN,0.82,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21469,Structuring,KY,0.89,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21470,Rapid Movement of Funds,RU,0.77,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21471,Crypto Laundering,AE,0.76,Large sums were moved across several jurisdictions within short time intervals.
+SAR21472,Mule Account,KY,0.97,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21473,Trade Based Money Laundering,SG,0.79,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21474,Layering,UK,0.85,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21475,Layering,UK,0.82,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21476,Layering,SG,0.7,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21477,Mule Account,NG,0.76,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21478,Round Tripping,UK,0.97,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21479,Layering,RU,0.85,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21480,Rapid Movement of Funds,RU,0.72,Large sums were moved across several jurisdictions within short time intervals.
+SAR21481,Rapid Movement of Funds,UK,0.78,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21482,Shell Company Transfers,US,0.96,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21483,Crypto Laundering,UK,0.77,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21484,Rapid Movement of Funds,UK,0.75,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21485,Structuring,RU,0.71,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21486,Trade Based Money Laundering,UK,0.7,Large sums were moved across several jurisdictions within short time intervals.
+SAR21487,Shell Company Transfers,UK,0.75,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21488,Rapid Movement of Funds,UK,0.89,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21489,Rapid Movement of Funds,IN,0.78,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21490,Structuring,NG,0.9,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21491,Trade Based Money Laundering,RU,0.93,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21492,Mule Account,SG,0.74,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21493,Structuring,KY,0.81,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21494,Shell Company Transfers,AE,0.72,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21495,Rapid Movement of Funds,IN,0.84,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21496,Crypto Laundering,IN,0.82,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21497,Trade Based Money Laundering,US,0.9,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21498,Structuring,SG,0.89,Large sums were moved across several jurisdictions within short time intervals.
+SAR21499,Structuring,NG,0.95,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21500,Shell Company Transfers,AE,0.96,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21501,Mule Account,KY,0.82,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21502,Round Tripping,UK,0.85,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21503,Layering,US,0.93,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21504,Mule Account,KY,0.93,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21505,Rapid Movement of Funds,US,0.72,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21506,Shell Company Transfers,IN,0.77,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21507,Mule Account,US,0.83,Large sums were moved across several jurisdictions within short time intervals.
+SAR21508,Shell Company Transfers,NG,0.67,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21509,Trade Based Money Laundering,IN,0.68,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21510,Crypto Laundering,RU,0.97,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21511,Round Tripping,KY,0.97,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21512,Structuring,US,0.87,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21513,Trade Based Money Laundering,RU,0.88,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21514,Trade Based Money Laundering,KY,0.66,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21515,Crypto Laundering,AE,0.72,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21516,Shell Company Transfers,NG,0.92,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21517,Layering,KY,0.94,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21518,Layering,NG,0.98,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21519,Shell Company Transfers,US,0.97,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21520,Rapid Movement of Funds,NG,0.68,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21521,Crypto Laundering,SG,0.8,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21522,Structuring,US,0.8,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21523,Mule Account,UK,0.96,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21524,Layering,UK,0.81,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21525,Layering,AE,0.96,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21526,Structuring,US,0.91,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21527,Crypto Laundering,IN,0.72,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21528,Round Tripping,UK,0.96,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21529,Round Tripping,US,0.96,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21530,Rapid Movement of Funds,KY,0.97,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21531,Trade Based Money Laundering,KY,0.9,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21532,Trade Based Money Laundering,RU,0.83,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21533,Crypto Laundering,RU,0.85,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21534,Structuring,AE,0.79,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21535,Layering,RU,0.69,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21536,Mule Account,SG,0.72,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21537,Layering,AE,0.67,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21538,Trade Based Money Laundering,US,0.67,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21539,Structuring,UK,0.92,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21540,Rapid Movement of Funds,IN,0.73,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21541,Rapid Movement of Funds,UK,0.65,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21542,Layering,RU,0.91,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21543,Round Tripping,KY,0.7,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21544,Crypto Laundering,SG,0.94,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21545,Round Tripping,KY,0.82,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21546,Trade Based Money Laundering,SG,0.7,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21547,Layering,SG,0.78,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21548,Crypto Laundering,RU,0.72,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21549,Layering,UK,0.96,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21550,Layering,AE,0.81,Large sums were moved across several jurisdictions within short time intervals.
+SAR21551,Structuring,UK,0.93,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21552,Round Tripping,KY,0.92,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21553,Rapid Movement of Funds,NG,0.81,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21554,Mule Account,IN,0.83,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21555,Rapid Movement of Funds,NG,0.79,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21556,Round Tripping,US,0.85,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21557,Crypto Laundering,UK,0.87,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21558,Structuring,RU,0.79,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21559,Trade Based Money Laundering,RU,0.96,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21560,Layering,RU,0.91,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21561,Trade Based Money Laundering,UK,0.68,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21562,Rapid Movement of Funds,RU,0.77,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21563,Rapid Movement of Funds,NG,0.71,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21564,Round Tripping,AE,0.73,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21565,Trade Based Money Laundering,AE,0.74,Large sums were moved across several jurisdictions within short time intervals.
+SAR21566,Crypto Laundering,KY,0.95,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21567,Mule Account,UK,0.8,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21568,Structuring,RU,0.77,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21569,Crypto Laundering,IN,0.9,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21570,Mule Account,SG,0.69,Large sums were moved across several jurisdictions within short time intervals.
+SAR21571,Structuring,RU,0.85,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21572,Round Tripping,AE,0.92,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21573,Rapid Movement of Funds,RU,0.73,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21574,Shell Company Transfers,RU,0.71,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21575,Mule Account,UK,0.96,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21576,Round Tripping,RU,0.72,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21577,Trade Based Money Laundering,KY,0.7,Large sums were moved across several jurisdictions within short time intervals.
+SAR21578,Round Tripping,AE,0.79,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21579,Rapid Movement of Funds,IN,0.72,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21580,Layering,SG,0.98,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21581,Shell Company Transfers,IN,0.8,Large sums were moved across several jurisdictions within short time intervals.
+SAR21582,Rapid Movement of Funds,UK,0.79,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21583,Rapid Movement of Funds,UK,0.82,Large sums were moved across several jurisdictions within short time intervals.
+SAR21584,Crypto Laundering,AE,0.77,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21585,Layering,KY,0.68,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21586,Layering,UK,0.8,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21587,Trade Based Money Laundering,KY,0.78,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21588,Rapid Movement of Funds,RU,0.82,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21589,Mule Account,KY,0.85,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21590,Trade Based Money Laundering,UK,0.76,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21591,Shell Company Transfers,SG,0.84,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21592,Round Tripping,US,0.74,Large sums were moved across several jurisdictions within short time intervals.
+SAR21593,Mule Account,KY,0.88,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21594,Trade Based Money Laundering,NG,0.89,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21595,Mule Account,KY,0.89,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21596,Shell Company Transfers,AE,0.87,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21597,Crypto Laundering,NG,0.83,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21598,Layering,NG,0.86,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21599,Shell Company Transfers,AE,0.73,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21600,Shell Company Transfers,SG,0.95,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21601,Crypto Laundering,RU,0.76,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21602,Crypto Laundering,RU,0.89,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21603,Round Tripping,US,0.94,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21604,Structuring,IN,0.7,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21605,Layering,IN,0.86,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21606,Mule Account,IN,0.69,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21607,Crypto Laundering,AE,0.69,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21608,Rapid Movement of Funds,UK,0.94,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21609,Shell Company Transfers,SG,0.87,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21610,Crypto Laundering,SG,0.66,Large sums were moved across several jurisdictions within short time intervals.
+SAR21611,Round Tripping,SG,0.97,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21612,Mule Account,RU,0.89,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21613,Rapid Movement of Funds,KY,0.72,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21614,Rapid Movement of Funds,KY,0.72,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21615,Crypto Laundering,SG,0.93,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21616,Round Tripping,US,0.84,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21617,Shell Company Transfers,AE,0.67,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21618,Mule Account,RU,0.74,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21619,Mule Account,US,0.95,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21620,Structuring,KY,0.97,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21621,Round Tripping,SG,0.84,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21622,Layering,RU,0.9,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21623,Round Tripping,NG,0.69,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21624,Layering,KY,0.98,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21625,Structuring,RU,0.76,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21626,Layering,UK,0.94,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21627,Structuring,NG,0.69,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21628,Round Tripping,UK,0.72,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21629,Trade Based Money Laundering,RU,0.7,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21630,Mule Account,AE,0.78,Large sums were moved across several jurisdictions within short time intervals.
+SAR21631,Trade Based Money Laundering,RU,0.73,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21632,Crypto Laundering,NG,0.75,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21633,Trade Based Money Laundering,RU,0.97,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21634,Mule Account,UK,0.78,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21635,Round Tripping,IN,0.79,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21636,Layering,IN,0.76,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21637,Shell Company Transfers,AE,0.98,Large sums were moved across several jurisdictions within short time intervals.
+SAR21638,Shell Company Transfers,NG,0.87,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21639,Round Tripping,NG,0.71,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21640,Round Tripping,US,0.93,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21641,Structuring,RU,0.83,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21642,Layering,NG,0.86,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21643,Structuring,IN,0.79,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21644,Crypto Laundering,NG,0.75,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21645,Crypto Laundering,NG,0.67,Large sums were moved across several jurisdictions within short time intervals.
+SAR21646,Shell Company Transfers,KY,0.66,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21647,Rapid Movement of Funds,SG,0.69,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21648,Trade Based Money Laundering,US,0.77,Large sums were moved across several jurisdictions within short time intervals.
+SAR21649,Rapid Movement of Funds,NG,0.84,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21650,Trade Based Money Laundering,IN,0.76,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21651,Mule Account,US,0.87,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21652,Rapid Movement of Funds,RU,0.74,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21653,Round Tripping,NG,0.66,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21654,Rapid Movement of Funds,US,0.89,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21655,Mule Account,NG,0.76,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21656,Shell Company Transfers,KY,0.97,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21657,Mule Account,US,0.92,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21658,Shell Company Transfers,RU,0.81,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21659,Mule Account,UK,0.84,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21660,Mule Account,UK,0.75,Large sums were moved across several jurisdictions within short time intervals.
+SAR21661,Rapid Movement of Funds,KY,0.98,Large sums were moved across several jurisdictions within short time intervals.
+SAR21662,Rapid Movement of Funds,IN,0.88,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21663,Shell Company Transfers,IN,0.95,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21664,Structuring,SG,0.93,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21665,Rapid Movement of Funds,UK,0.82,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21666,Mule Account,IN,0.87,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21667,Round Tripping,AE,0.86,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21668,Mule Account,NG,0.77,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21669,Mule Account,SG,0.81,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21670,Rapid Movement of Funds,US,0.7,Large sums were moved across several jurisdictions within short time intervals.
+SAR21671,Shell Company Transfers,AE,0.76,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21672,Rapid Movement of Funds,NG,0.82,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21673,Crypto Laundering,RU,0.84,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21674,Layering,RU,0.65,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21675,Trade Based Money Laundering,AE,0.69,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21676,Round Tripping,AE,0.78,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21677,Crypto Laundering,US,0.67,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21678,Trade Based Money Laundering,KY,0.96,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21679,Trade Based Money Laundering,UK,0.69,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21680,Crypto Laundering,SG,0.76,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21681,Rapid Movement of Funds,UK,0.9,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21682,Round Tripping,US,0.92,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21683,Mule Account,SG,0.68,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21684,Structuring,NG,0.77,Large sums were moved across several jurisdictions within short time intervals.
+SAR21685,Shell Company Transfers,KY,0.91,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21686,Crypto Laundering,SG,0.68,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21687,Layering,UK,0.78,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21688,Structuring,SG,0.83,Large sums were moved across several jurisdictions within short time intervals.
+SAR21689,Mule Account,AE,0.74,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21690,Trade Based Money Laundering,NG,0.8,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21691,Round Tripping,RU,0.67,Large sums were moved across several jurisdictions within short time intervals.
+SAR21692,Trade Based Money Laundering,RU,0.83,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21693,Round Tripping,UK,0.66,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21694,Crypto Laundering,UK,0.72,Large sums were moved across several jurisdictions within short time intervals.
+SAR21695,Round Tripping,KY,0.85,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21696,Crypto Laundering,UK,0.77,Large sums were moved across several jurisdictions within short time intervals.
+SAR21697,Layering,US,0.9,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21698,Crypto Laundering,SG,0.67,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21699,Layering,US,0.76,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21700,Round Tripping,US,0.93,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21701,Trade Based Money Laundering,RU,0.98,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21702,Round Tripping,NG,0.79,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21703,Round Tripping,AE,0.7,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21704,Crypto Laundering,KY,0.92,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21705,Rapid Movement of Funds,US,0.83,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21706,Crypto Laundering,IN,0.78,Large sums were moved across several jurisdictions within short time intervals.
+SAR21707,Crypto Laundering,US,0.9,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21708,Trade Based Money Laundering,SG,0.87,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21709,Rapid Movement of Funds,UK,0.92,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21710,Structuring,RU,0.75,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21711,Round Tripping,NG,0.94,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21712,Layering,US,0.68,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21713,Mule Account,IN,0.76,Large sums were moved across several jurisdictions within short time intervals.
+SAR21714,Round Tripping,SG,0.68,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21715,Structuring,RU,0.91,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21716,Crypto Laundering,US,0.78,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21717,Crypto Laundering,UK,0.95,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21718,Rapid Movement of Funds,IN,0.95,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21719,Round Tripping,RU,0.81,Large sums were moved across several jurisdictions within short time intervals.
+SAR21720,Layering,UK,0.96,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21721,Round Tripping,RU,0.79,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21722,Mule Account,AE,0.68,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21723,Rapid Movement of Funds,US,0.9,Large sums were moved across several jurisdictions within short time intervals.
+SAR21724,Structuring,US,0.94,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21725,Shell Company Transfers,RU,0.82,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21726,Layering,US,0.97,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21727,Round Tripping,AE,0.87,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21728,Mule Account,US,0.7,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21729,Shell Company Transfers,KY,0.84,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21730,Round Tripping,SG,0.79,Large sums were moved across several jurisdictions within short time intervals.
+SAR21731,Crypto Laundering,RU,0.7,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21732,Rapid Movement of Funds,AE,0.85,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21733,Shell Company Transfers,RU,0.77,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21734,Rapid Movement of Funds,AE,0.8,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21735,Mule Account,IN,0.83,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21736,Crypto Laundering,NG,0.97,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21737,Trade Based Money Laundering,SG,0.91,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21738,Shell Company Transfers,SG,0.77,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21739,Layering,SG,0.93,Large sums were moved across several jurisdictions within short time intervals.
+SAR21740,Mule Account,SG,0.9,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21741,Trade Based Money Laundering,IN,0.86,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21742,Round Tripping,UK,0.79,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21743,Shell Company Transfers,AE,0.85,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21744,Crypto Laundering,US,0.77,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21745,Crypto Laundering,KY,0.96,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21746,Shell Company Transfers,AE,0.96,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21747,Trade Based Money Laundering,UK,0.97,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21748,Layering,NG,0.79,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21749,Layering,US,0.81,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21750,Mule Account,RU,0.67,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21751,Mule Account,KY,0.71,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21752,Shell Company Transfers,SG,0.77,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21753,Structuring,AE,0.95,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21754,Shell Company Transfers,NG,0.73,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21755,Round Tripping,UK,0.77,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21756,Layering,US,0.85,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21757,Structuring,AE,0.71,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21758,Round Tripping,US,0.98,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21759,Structuring,RU,0.72,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21760,Round Tripping,RU,0.85,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21761,Round Tripping,KY,0.89,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21762,Rapid Movement of Funds,SG,0.98,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21763,Crypto Laundering,UK,0.81,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21764,Structuring,UK,0.98,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21765,Mule Account,SG,0.8,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21766,Structuring,NG,0.9,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21767,Structuring,IN,0.84,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21768,Round Tripping,UK,0.77,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21769,Shell Company Transfers,KY,0.74,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21770,Structuring,RU,0.72,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21771,Crypto Laundering,NG,0.75,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21772,Crypto Laundering,KY,0.83,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21773,Rapid Movement of Funds,UK,0.89,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21774,Trade Based Money Laundering,US,0.66,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21775,Crypto Laundering,RU,0.94,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21776,Trade Based Money Laundering,NG,0.77,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21777,Structuring,UK,0.74,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21778,Shell Company Transfers,AE,0.7,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21779,Shell Company Transfers,IN,0.91,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21780,Rapid Movement of Funds,RU,0.72,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21781,Layering,RU,0.83,Funds were sent to accounts linked to shell companies lacking operational presence.
+SAR21782,Mule Account,AE,0.81,The subject conducted multiple transactions just below reporting thresholds indicating structuring behavior.
+SAR21783,Layering,UK,0.79,The transaction chain indicates round-tripping behavior where funds return to the originating entity.
+SAR21784,Crypto Laundering,AE,0.97,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21785,Rapid Movement of Funds,KY,0.71,Large sums were moved across several jurisdictions within short time intervals.
+SAR21786,Mule Account,US,0.94,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21787,Round Tripping,AE,0.77,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21788,Round Tripping,NG,0.92,Large sums were moved across several jurisdictions within short time intervals.
+SAR21789,Layering,SG,0.76,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21790,Mule Account,UK,0.88,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21791,Rapid Movement of Funds,KY,0.89,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21792,Shell Company Transfers,SG,0.93,Trade transactions appear inconsistent with the customer's stated business profile.
+SAR21793,Trade Based Money Laundering,NG,0.9,Funds were rapidly transferred through multiple intermediary accounts suggesting layering activity.
+SAR21794,Structuring,KY,0.9,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21795,Trade Based Money Laundering,NG,0.89,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21796,Structuring,RU,0.66,Large sums were moved across several jurisdictions within short time intervals.
+SAR21797,Rapid Movement of Funds,UK,0.91,Account activity suggests involvement of mule accounts receiving and forwarding funds rapidly.
+SAR21798,Structuring,AE,0.86,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.
+SAR21799,Structuring,NG,0.78,Transfers were directed toward cryptocurrency exchanges in high-risk jurisdictions.

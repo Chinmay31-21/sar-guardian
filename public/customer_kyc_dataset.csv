@@ -1,0 +1,501 @@
+customer_id,name,age,occupation,account_open_date,risk_level,country,kyc_status,politically_exposed_person
+CUST90000,Pooja Nair,40,Travel Agent,2022-02-21,Low,Cayman Islands,Enhanced Due Diligence,False
+CUST90001,Manish Chawla,30,Real Estate Agent,2023-02-08,Medium,India,Pending,False
+CUST90002,Aditya Kulkarni,26,Financial Advisor,2020-08-25,Low,UK,Verified,False
+CUST90003,Aditya Kulkarni,48,Real Estate Agent,2022-05-12,Low,USA,Pending,False
+CUST90004,Meera Joshi,24,Consultant,2022-03-21,Medium,Nigeria,Verified,False
+CUST90005,Aditya Kulkarni,48,Consultant,2020-11-08,Low,India,Verified,False
+CUST90006,Neha Kapoor,28,Financial Advisor,2020-06-17,Medium,Nigeria,Pending,False
+CUST90007,Amit Khanna,55,Retail Business Owner,2021-03-29,Low,USA,Verified,False
+CUST90008,Priya Desai,38,Retail Business Owner,2020-09-15,Medium,Russia,Verified,False
+CUST90009,Sneha Iyer,23,Financial Advisor,2019-09-17,Low,Cayman Islands,Pending,False
+CUST90010,Priya Desai,35,Real Estate Agent,2019-08-26,Low,India,Verified,False
+CUST90011,Isha Sethi,43,Financial Advisor,2022-06-29,Low,USA,Verified,False
+CUST90012,Anita Sharma,57,Import Export Business,2023-06-25,Low,Cayman Islands,Verified,False
+CUST90013,Aditya Kulkarni,44,Real Estate Agent,2019-12-06,Low,Nigeria,Pending,False
+CUST90014,Aditya Kulkarni,63,Consultant,2024-02-05,High,Cayman Islands,Pending,False
+CUST90015,Sneha Iyer,24,Logistics Manager,2021-10-18,Low,Singapore,Verified,False
+CUST90016,Rakesh Singh,37,Travel Agent,2021-08-31,Medium,Cayman Islands,Verified,False
+CUST90017,Nisha Bansal,50,Investment Analyst,2023-03-10,Low,Singapore,Verified,False
+CUST90018,Manish Chawla,51,NGO Worker,2024-01-19,High,UK,Verified,False
+CUST90019,Rakesh Singh,25,Consultant,2021-04-08,Medium,Russia,Verified,False
+CUST90020,Pooja Nair,59,Retail Business Owner,2024-04-27,Low,UK,Verified,False
+CUST90021,Isha Sethi,39,Consultant,2023-02-05,Low,Nigeria,Verified,False
+CUST90022,Meera Joshi,30,NGO Worker,2022-02-07,Low,Russia,Pending,False
+CUST90023,Sanjay Gupta,37,Crypto Trader,2022-11-18,Low,India,Verified,False
+CUST90024,Amit Khanna,32,Import Export Business,2019-12-20,Low,Cayman Islands,Pending,False
+CUST90025,Isha Sethi,61,Import Export Business,2023-07-06,Medium,UK,Verified,False
+CUST90026,Arjun Verma,38,Software Engineer,2023-02-01,Low,Nigeria,Verified,False
+CUST90027,Anita Sharma,27,Freelancer,2023-03-15,Medium,Nigeria,Verified,False
+CUST90028,Sneha Iyer,25,Financial Advisor,2022-03-05,Low,India,Verified,False
+CUST90029,Priya Desai,55,Investment Analyst,2024-04-05,Low,UK,Verified,False
+CUST90030,Anita Sharma,33,Logistics Manager,2021-11-14,Low,Singapore,Verified,False
+CUST90031,Meera Joshi,29,Travel Agent,2020-11-09,Medium,India,Pending,False
+CUST90032,Pooja Nair,50,Investment Analyst,2024-03-12,Low,UK,Pending,False
+CUST90033,Tarun Jain,25,Retail Business Owner,2021-02-20,Low,India,Verified,False
+CUST90034,Aditya Kulkarni,23,Import Export Business,2019-02-16,Low,Russia,Verified,False
+CUST90035,Rohan Das,28,NGO Worker,2023-04-23,Medium,India,Verified,False
+CUST90036,Amit Khanna,45,NGO Worker,2022-09-23,Low,Cayman Islands,Pending,False
+CUST90037,Pooja Nair,52,Logistics Manager,2020-10-12,Medium,UK,Verified,False
+CUST90038,Aditya Kulkarni,52,Investment Analyst,2023-10-08,Low,Russia,Verified,False
+CUST90039,Anita Sharma,61,Freelancer,2021-03-28,Low,USA,Verified,False
+CUST90040,Meera Joshi,47,Travel Agent,2021-12-14,Medium,UAE,Verified,False
+CUST90041,Rakesh Singh,35,Software Engineer,2023-03-04,Low,Nigeria,Verified,False
+CUST90042,Rakesh Singh,39,Consultant,2019-04-25,Low,Russia,Verified,False
+CUST90043,Nisha Bansal,33,Travel Agent,2022-06-11,Low,UAE,Verified,False
+CUST90044,Neha Kapoor,43,Travel Agent,2021-09-07,Medium,Cayman Islands,Verified,False
+CUST90045,Sanjay Gupta,42,Import Export Business,2019-02-04,High,UAE,Verified,False
+CUST90046,Rohan Das,25,Financial Advisor,2020-08-18,Low,Russia,Verified,False
+CUST90047,Rahul Mehta,35,Real Estate Agent,2023-04-26,Low,India,Verified,False
+CUST90048,Meera Joshi,38,Financial Advisor,2022-11-10,Low,UAE,Pending,False
+CUST90049,Karan Malhotra,43,Retail Business Owner,2020-11-09,Low,Cayman Islands,Pending,False
+CUST90050,Meera Joshi,49,NGO Worker,2022-09-17,Low,Singapore,Verified,False
+CUST90051,Aditya Kulkarni,65,Investment Analyst,2020-05-16,Medium,Singapore,Verified,False
+CUST90052,Divya Rao,34,Software Engineer,2021-06-12,Low,USA,Verified,False
+CUST90053,Rahul Mehta,23,Retail Business Owner,2019-08-16,Medium,UAE,Enhanced Due Diligence,False
+CUST90054,Karan Malhotra,53,Investment Analyst,2021-05-25,Low,UAE,Verified,False
+CUST90055,Tarun Jain,63,Crypto Trader,2019-04-26,Low,Cayman Islands,Verified,False
+CUST90056,Neha Kapoor,46,Crypto Trader,2020-06-13,Medium,India,Verified,False
+CUST90057,Arjun Verma,27,Real Estate Agent,2023-05-16,Medium,Nigeria,Verified,False
+CUST90058,Meera Joshi,53,Travel Agent,2022-04-12,High,Russia,Verified,False
+CUST90059,Amit Khanna,63,Consultant,2022-03-14,Low,Singapore,Verified,False
+CUST90060,Pooja Nair,26,Software Engineer,2019-09-26,Low,Nigeria,Verified,False
+CUST90061,Sanjay Gupta,35,NGO Worker,2023-10-03,High,Russia,Verified,False
+CUST90062,Vikram Patel,56,Financial Advisor,2021-08-07,Medium,UK,Pending,False
+CUST90063,Vikram Patel,54,Freelancer,2019-07-01,Medium,Cayman Islands,Pending,False
+CUST90064,Karan Malhotra,31,Freelancer,2022-01-28,Low,Singapore,Pending,False
+CUST90065,Priya Desai,27,Investment Analyst,2021-06-17,Medium,Russia,Pending,False
+CUST90066,Rohan Das,54,Retail Business Owner,2020-08-09,Low,Nigeria,Verified,False
+CUST90067,Meera Joshi,60,Retail Business Owner,2024-03-30,High,Cayman Islands,Verified,False
+CUST90068,Vikram Patel,35,Investment Analyst,2019-08-04,Low,Cayman Islands,Verified,False
+CUST90069,Aditya Kulkarni,62,Import Export Business,2022-02-16,Medium,USA,Verified,False
+CUST90070,Rahul Mehta,49,Retail Business Owner,2019-10-12,Low,Singapore,Verified,False
+CUST90071,Isha Sethi,38,Travel Agent,2023-09-16,Medium,Singapore,Verified,False
+CUST90072,Karan Malhotra,35,Logistics Manager,2020-03-24,Medium,Singapore,Verified,False
+CUST90073,Anita Sharma,33,Crypto Trader,2021-06-14,Low,Singapore,Verified,False
+CUST90074,Pooja Nair,56,Financial Advisor,2019-09-14,Low,India,Verified,False
+CUST90075,Vikram Patel,26,Financial Advisor,2020-02-10,High,UK,Verified,False
+CUST90076,Arjun Verma,39,NGO Worker,2023-06-22,Low,Cayman Islands,Verified,True
+CUST90077,Divya Rao,33,Software Engineer,2020-07-09,Medium,UK,Pending,False
+CUST90078,Sneha Iyer,44,Crypto Trader,2022-08-11,Low,Cayman Islands,Verified,False
+CUST90079,Isha Sethi,29,Freelancer,2019-12-22,Medium,UK,Enhanced Due Diligence,False
+CUST90080,Manish Chawla,50,Logistics Manager,2023-09-29,Low,Singapore,Verified,False
+CUST90081,Aditya Kulkarni,55,NGO Worker,2021-01-14,Medium,Nigeria,Verified,False
+CUST90082,Arjun Verma,61,Investment Analyst,2021-12-20,Low,USA,Verified,False
+CUST90083,Neha Kapoor,26,Consultant,2022-12-02,Medium,Russia,Verified,False
+CUST90084,Meera Joshi,60,Crypto Trader,2021-05-02,High,USA,Verified,False
+CUST90085,Tarun Jain,45,Financial Advisor,2019-02-04,Medium,India,Enhanced Due Diligence,False
+CUST90086,Divya Rao,40,Import Export Business,2021-08-31,Low,USA,Pending,False
+CUST90087,Arjun Verma,50,Real Estate Agent,2022-07-10,Medium,UAE,Verified,False
+CUST90088,Rakesh Singh,22,Logistics Manager,2023-09-07,Low,UK,Verified,False
+CUST90089,Divya Rao,60,NGO Worker,2021-04-30,Low,Cayman Islands,Pending,False
+CUST90090,Isha Sethi,36,NGO Worker,2019-07-30,Low,UAE,Enhanced Due Diligence,False
+CUST90091,Neha Kapoor,31,Retail Business Owner,2021-12-30,Low,Russia,Pending,False
+CUST90092,Nisha Bansal,59,NGO Worker,2022-05-14,High,UAE,Verified,False
+CUST90093,Anita Sharma,54,Retail Business Owner,2021-03-25,Low,UK,Verified,False
+CUST90094,Pooja Nair,22,Consultant,2023-02-26,Low,Nigeria,Pending,False
+CUST90095,Aditya Kulkarni,58,Freelancer,2021-05-28,Medium,Russia,Enhanced Due Diligence,False
+CUST90096,Pooja Nair,22,Software Engineer,2020-01-26,Low,UAE,Pending,False
+CUST90097,Rahul Mehta,29,Software Engineer,2023-12-02,Low,Russia,Verified,False
+CUST90098,Anita Sharma,30,Retail Business Owner,2021-01-03,Low,Cayman Islands,Verified,False
+CUST90099,Manish Chawla,42,Financial Advisor,2022-05-04,Low,Nigeria,Pending,False
+CUST90100,Priya Desai,39,Freelancer,2023-07-24,Low,Cayman Islands,Verified,False
+CUST90101,Meera Joshi,23,Consultant,2019-05-20,Low,UAE,Verified,False
+CUST90102,Sanjay Gupta,40,Crypto Trader,2023-11-02,Low,UAE,Pending,False
+CUST90103,Meera Joshi,51,Crypto Trader,2020-02-07,Medium,Singapore,Verified,False
+CUST90104,Manish Chawla,60,Consultant,2019-10-06,Low,Nigeria,Verified,False
+CUST90105,Karan Malhotra,23,Crypto Trader,2023-08-06,Low,Singapore,Verified,False
+CUST90106,Karan Malhotra,22,Logistics Manager,2019-12-12,Low,UAE,Verified,False
+CUST90107,Rohan Das,37,Retail Business Owner,2019-12-30,High,UAE,Verified,False
+CUST90108,Sanjay Gupta,44,Travel Agent,2021-11-11,Medium,Nigeria,Verified,False
+CUST90109,Anita Sharma,36,Crypto Trader,2020-05-19,Low,Cayman Islands,Enhanced Due Diligence,False
+CUST90110,Rahul Mehta,34,Travel Agent,2023-08-03,Medium,Singapore,Pending,False
+CUST90111,Rakesh Singh,62,Travel Agent,2019-01-13,Medium,UAE,Verified,False
+CUST90112,Neha Kapoor,24,Freelancer,2019-07-02,Medium,Russia,Pending,False
+CUST90113,Rahul Mehta,43,Financial Advisor,2024-04-12,Low,India,Verified,False
+CUST90114,Pooja Nair,34,Investment Analyst,2022-10-13,Low,Cayman Islands,Verified,False
+CUST90115,Rohan Das,23,Investment Analyst,2022-01-29,High,Russia,Verified,False
+CUST90116,Manish Chawla,60,Financial Advisor,2020-02-11,Low,Singapore,Enhanced Due Diligence,False
+CUST90117,Amit Khanna,28,Investment Analyst,2021-06-19,Medium,USA,Enhanced Due Diligence,False
+CUST90118,Meera Joshi,40,Freelancer,2019-03-22,Low,Russia,Enhanced Due Diligence,False
+CUST90119,Arjun Verma,46,Freelancer,2022-05-31,Low,Russia,Enhanced Due Diligence,False
+CUST90120,Neha Kapoor,55,Logistics Manager,2022-09-25,High,Singapore,Enhanced Due Diligence,False
+CUST90121,Tarun Jain,41,Software Engineer,2022-11-28,Low,UK,Verified,False
+CUST90122,Nisha Bansal,40,Import Export Business,2021-10-11,Low,Singapore,Verified,False
+CUST90123,Divya Rao,63,Software Engineer,2023-01-19,Medium,India,Pending,False
+CUST90124,Aditya Kulkarni,40,Real Estate Agent,2021-03-29,Low,USA,Pending,False
+CUST90125,Neha Kapoor,62,Import Export Business,2020-03-18,Low,Russia,Verified,False
+CUST90126,Aditya Kulkarni,56,Software Engineer,2021-05-13,Medium,India,Verified,False
+CUST90127,Rohan Das,52,Travel Agent,2021-06-10,Medium,UK,Verified,False
+CUST90128,Divya Rao,34,Travel Agent,2020-07-05,Medium,Cayman Islands,Pending,False
+CUST90129,Manish Chawla,48,Software Engineer,2020-03-16,Low,Singapore,Enhanced Due Diligence,False
+CUST90130,Neha Kapoor,52,Software Engineer,2023-10-31,Medium,Cayman Islands,Verified,True
+CUST90131,Arjun Verma,29,NGO Worker,2021-09-16,Low,India,Verified,False
+CUST90132,Sneha Iyer,59,NGO Worker,2019-01-29,Low,USA,Verified,False
+CUST90133,Manish Chawla,61,Retail Business Owner,2020-07-20,Medium,Cayman Islands,Verified,False
+CUST90134,Tarun Jain,35,Software Engineer,2019-12-26,Medium,Singapore,Verified,False
+CUST90135,Karan Malhotra,39,Investment Analyst,2022-09-25,Medium,Singapore,Verified,False
+CUST90136,Neha Kapoor,32,Logistics Manager,2021-10-28,Low,Singapore,Pending,False
+CUST90137,Karan Malhotra,37,NGO Worker,2019-05-26,Medium,UK,Verified,False
+CUST90138,Karan Malhotra,36,Import Export Business,2022-01-08,High,Singapore,Verified,False
+CUST90139,Karan Malhotra,61,Import Export Business,2020-08-16,High,Nigeria,Verified,False
+CUST90140,Nisha Bansal,37,Freelancer,2021-06-06,Low,Russia,Verified,False
+CUST90141,Priya Desai,22,Software Engineer,2024-03-13,Medium,USA,Verified,False
+CUST90142,Manish Chawla,52,NGO Worker,2023-08-10,Low,Russia,Verified,False
+CUST90143,Amit Khanna,41,Real Estate Agent,2022-10-04,Low,UK,Verified,False
+CUST90144,Manish Chawla,50,Investment Analyst,2021-07-12,Low,USA,Verified,False
+CUST90145,Rahul Mehta,52,Travel Agent,2020-02-29,Low,USA,Verified,False
+CUST90146,Pooja Nair,42,Consultant,2023-07-07,High,Cayman Islands,Verified,False
+CUST90147,Amit Khanna,44,Freelancer,2019-08-27,High,Cayman Islands,Verified,False
+CUST90148,Sneha Iyer,59,Financial Advisor,2023-11-15,Low,UAE,Enhanced Due Diligence,False
+CUST90149,Anita Sharma,42,Freelancer,2022-05-08,Low,India,Verified,False
+CUST90150,Sanjay Gupta,46,Consultant,2019-03-15,Low,Russia,Verified,False
+CUST90151,Tarun Jain,35,Financial Advisor,2022-01-05,Low,Singapore,Verified,False
+CUST90152,Karan Malhotra,60,Real Estate Agent,2021-10-25,Low,UAE,Pending,False
+CUST90153,Tarun Jain,50,Retail Business Owner,2023-12-31,Low,Singapore,Pending,False
+CUST90154,Anita Sharma,26,Software Engineer,2024-01-22,Low,UK,Verified,False
+CUST90155,Amit Khanna,49,Travel Agent,2020-09-25,Low,USA,Verified,False
+CUST90156,Divya Rao,55,Retail Business Owner,2021-02-05,Medium,USA,Verified,False
+CUST90157,Arjun Verma,41,Freelancer,2020-10-17,Medium,Nigeria,Verified,True
+CUST90158,Meera Joshi,32,NGO Worker,2020-12-04,Low,UAE,Pending,False
+CUST90159,Nisha Bansal,61,Real Estate Agent,2019-11-03,Medium,Singapore,Enhanced Due Diligence,False
+CUST90160,Rohan Das,63,Financial Advisor,2019-10-31,Low,USA,Verified,True
+CUST90161,Sneha Iyer,41,Travel Agent,2020-08-13,Low,Cayman Islands,Verified,False
+CUST90162,Nisha Bansal,43,Investment Analyst,2019-01-23,Low,USA,Enhanced Due Diligence,False
+CUST90163,Amit Khanna,52,Investment Analyst,2021-04-03,High,UK,Pending,True
+CUST90164,Tarun Jain,44,Freelancer,2019-02-24,Low,UK,Verified,False
+CUST90165,Meera Joshi,40,Import Export Business,2022-11-05,Medium,Singapore,Verified,False
+CUST90166,Tarun Jain,34,Travel Agent,2019-05-22,Medium,Russia,Verified,False
+CUST90167,Priya Desai,36,Real Estate Agent,2022-12-11,Medium,UAE,Verified,False
+CUST90168,Rahul Mehta,40,NGO Worker,2022-01-20,Low,Singapore,Verified,False
+CUST90169,Rohan Das,35,Freelancer,2022-03-31,Low,Cayman Islands,Verified,False
+CUST90170,Isha Sethi,40,NGO Worker,2019-06-18,Low,Singapore,Verified,False
+CUST90171,Sneha Iyer,46,Logistics Manager,2019-02-03,Low,USA,Verified,False
+CUST90172,Rohan Das,58,Crypto Trader,2024-01-16,High,USA,Enhanced Due Diligence,False
+CUST90173,Karan Malhotra,47,Consultant,2023-12-11,Medium,Singapore,Verified,False
+CUST90174,Meera Joshi,53,Travel Agent,2019-05-23,Medium,UK,Verified,False
+CUST90175,Isha Sethi,43,Retail Business Owner,2019-08-25,High,UAE,Pending,False
+CUST90176,Neha Kapoor,36,Consultant,2024-03-09,Medium,India,Verified,False
+CUST90177,Rakesh Singh,29,Financial Advisor,2023-04-28,High,UK,Verified,False
+CUST90178,Arjun Verma,58,NGO Worker,2021-10-23,Low,USA,Pending,False
+CUST90179,Amit Khanna,65,Logistics Manager,2020-03-20,Medium,Russia,Verified,True
+CUST90180,Pooja Nair,46,Retail Business Owner,2023-09-30,Low,India,Enhanced Due Diligence,False
+CUST90181,Divya Rao,35,Logistics Manager,2022-07-02,Low,Singapore,Verified,False
+CUST90182,Manish Chawla,54,Consultant,2021-05-21,Medium,Nigeria,Verified,False
+CUST90183,Meera Joshi,60,Retail Business Owner,2020-06-22,Low,Singapore,Pending,False
+CUST90184,Tarun Jain,25,Import Export Business,2019-06-27,Low,UK,Verified,False
+CUST90185,Sanjay Gupta,26,Financial Advisor,2021-04-08,Medium,USA,Verified,False
+CUST90186,Sneha Iyer,45,Freelancer,2021-07-08,Medium,Cayman Islands,Verified,False
+CUST90187,Vikram Patel,55,Crypto Trader,2019-01-26,Medium,USA,Enhanced Due Diligence,False
+CUST90188,Rahul Mehta,23,Logistics Manager,2022-07-01,Low,Russia,Verified,False
+CUST90189,Isha Sethi,34,Real Estate Agent,2019-05-20,Low,UAE,Verified,False
+CUST90190,Isha Sethi,55,Real Estate Agent,2019-07-11,Medium,Nigeria,Verified,False
+CUST90191,Neha Kapoor,57,Freelancer,2019-06-06,Medium,Cayman Islands,Pending,False
+CUST90192,Divya Rao,27,Logistics Manager,2022-08-11,Low,Russia,Verified,True
+CUST90193,Aditya Kulkarni,55,Consultant,2023-12-06,Low,Russia,Verified,False
+CUST90194,Meera Joshi,28,Travel Agent,2019-10-29,Medium,India,Verified,False
+CUST90195,Nisha Bansal,28,Logistics Manager,2021-07-02,Medium,Singapore,Enhanced Due Diligence,False
+CUST90196,Meera Joshi,41,Logistics Manager,2023-04-26,Low,India,Verified,False
+CUST90197,Neha Kapoor,53,Retail Business Owner,2020-11-19,Low,Cayman Islands,Enhanced Due Diligence,False
+CUST90198,Neha Kapoor,36,Real Estate Agent,2022-12-18,Low,Singapore,Pending,False
+CUST90199,Sanjay Gupta,43,Crypto Trader,2020-01-13,Medium,Russia,Verified,False
+CUST90200,Amit Khanna,30,Real Estate Agent,2021-09-02,Low,Nigeria,Verified,False
+CUST90201,Amit Khanna,64,Freelancer,2021-08-23,Medium,India,Enhanced Due Diligence,False
+CUST90202,Tarun Jain,28,Retail Business Owner,2022-05-20,Medium,USA,Verified,False
+CUST90203,Amit Khanna,23,Software Engineer,2020-04-16,Medium,Singapore,Pending,False
+CUST90204,Rohan Das,51,Retail Business Owner,2021-11-05,Low,Cayman Islands,Verified,False
+CUST90205,Isha Sethi,45,Retail Business Owner,2023-02-24,Low,India,Verified,False
+CUST90206,Rakesh Singh,52,Financial Advisor,2020-10-21,Medium,India,Pending,False
+CUST90207,Sanjay Gupta,43,Freelancer,2022-04-23,Low,Nigeria,Pending,False
+CUST90208,Amit Khanna,35,Import Export Business,2023-03-01,Medium,Cayman Islands,Enhanced Due Diligence,False
+CUST90209,Rakesh Singh,65,Freelancer,2022-01-20,Low,UAE,Verified,False
+CUST90210,Arjun Verma,64,NGO Worker,2019-01-18,Low,India,Pending,False
+CUST90211,Sneha Iyer,58,Logistics Manager,2020-08-17,Medium,Singapore,Verified,False
+CUST90212,Priya Desai,65,Logistics Manager,2022-07-25,Medium,Russia,Verified,False
+CUST90213,Anita Sharma,55,Logistics Manager,2022-09-05,Low,Russia,Verified,False
+CUST90214,Neha Kapoor,48,Financial Advisor,2021-01-11,Medium,Nigeria,Enhanced Due Diligence,False
+CUST90215,Tarun Jain,47,Logistics Manager,2022-03-29,Medium,Russia,Verified,False
+CUST90216,Aditya Kulkarni,51,Consultant,2019-09-18,Low,Nigeria,Pending,False
+CUST90217,Karan Malhotra,52,Retail Business Owner,2022-03-08,Low,USA,Verified,False
+CUST90218,Arjun Verma,50,Import Export Business,2023-06-01,Medium,UK,Verified,False
+CUST90219,Priya Desai,32,Financial Advisor,2020-01-21,Low,Nigeria,Verified,False
+CUST90220,Isha Sethi,54,Freelancer,2020-09-30,Low,USA,Pending,False
+CUST90221,Neha Kapoor,55,Financial Advisor,2020-05-18,Medium,USA,Pending,False
+CUST90222,Sneha Iyer,56,Real Estate Agent,2022-07-14,Medium,USA,Verified,False
+CUST90223,Sneha Iyer,28,Freelancer,2023-10-24,Low,Nigeria,Pending,False
+CUST90224,Arjun Verma,47,Travel Agent,2019-07-09,Low,Russia,Pending,False
+CUST90225,Aditya Kulkarni,56,Retail Business Owner,2021-04-24,Low,UAE,Enhanced Due Diligence,False
+CUST90226,Pooja Nair,39,Software Engineer,2020-05-16,Low,UAE,Verified,False
+CUST90227,Sneha Iyer,39,Crypto Trader,2020-03-16,Low,Singapore,Verified,False
+CUST90228,Nisha Bansal,34,Travel Agent,2019-11-25,Medium,Singapore,Pending,False
+CUST90229,Rohan Das,25,Crypto Trader,2023-10-28,Low,India,Verified,False
+CUST90230,Aditya Kulkarni,26,Crypto Trader,2024-05-28,Low,Singapore,Verified,False
+CUST90231,Rahul Mehta,58,Logistics Manager,2024-03-29,Low,Russia,Verified,False
+CUST90232,Rakesh Singh,49,Import Export Business,2019-02-28,Low,India,Verified,False
+CUST90233,Isha Sethi,22,Consultant,2022-12-28,Medium,Nigeria,Verified,False
+CUST90234,Arjun Verma,25,Software Engineer,2022-11-23,High,Cayman Islands,Verified,False
+CUST90235,Anita Sharma,60,Freelancer,2019-07-15,Low,UK,Verified,False
+CUST90236,Nisha Bansal,24,Retail Business Owner,2024-04-26,Low,Cayman Islands,Verified,False
+CUST90237,Rohan Das,51,Investment Analyst,2019-02-12,Low,Nigeria,Verified,False
+CUST90238,Meera Joshi,65,Retail Business Owner,2022-07-04,Low,USA,Verified,False
+CUST90239,Rohan Das,55,Freelancer,2022-02-19,Medium,Singapore,Verified,False
+CUST90240,Manish Chawla,48,Real Estate Agent,2021-01-18,Low,Nigeria,Verified,False
+CUST90241,Meera Joshi,46,Crypto Trader,2024-05-03,High,Nigeria,Verified,False
+CUST90242,Rohan Das,60,Consultant,2023-11-07,Low,Russia,Verified,False
+CUST90243,Sanjay Gupta,57,Real Estate Agent,2019-10-02,Low,Nigeria,Verified,True
+CUST90244,Manish Chawla,43,Investment Analyst,2023-10-05,High,Cayman Islands,Verified,False
+CUST90245,Amit Khanna,63,Logistics Manager,2022-11-03,Medium,Singapore,Verified,False
+CUST90246,Nisha Bansal,28,Crypto Trader,2020-04-09,Low,Singapore,Enhanced Due Diligence,False
+CUST90247,Amit Khanna,39,Travel Agent,2024-01-16,Low,India,Verified,False
+CUST90248,Rohan Das,31,Investment Analyst,2020-01-21,Low,Russia,Pending,False
+CUST90249,Tarun Jain,41,Freelancer,2023-09-13,Low,UAE,Enhanced Due Diligence,False
+CUST90250,Arjun Verma,42,Retail Business Owner,2019-06-14,Low,Cayman Islands,Enhanced Due Diligence,False
+CUST90251,Karan Malhotra,52,Travel Agent,2023-05-30,Medium,Cayman Islands,Verified,False
+CUST90252,Vikram Patel,48,Consultant,2021-08-29,Medium,UAE,Enhanced Due Diligence,False
+CUST90253,Arjun Verma,46,Consultant,2021-09-30,Low,UAE,Verified,False
+CUST90254,Neha Kapoor,62,Software Engineer,2021-01-07,Low,Cayman Islands,Verified,False
+CUST90255,Tarun Jain,51,Software Engineer,2019-04-08,Low,Nigeria,Verified,False
+CUST90256,Divya Rao,41,Freelancer,2022-02-03,Low,India,Verified,False
+CUST90257,Manish Chawla,39,Investment Analyst,2022-12-14,Low,India,Verified,False
+CUST90258,Nisha Bansal,60,Import Export Business,2019-12-10,Medium,Nigeria,Verified,False
+CUST90259,Sanjay Gupta,60,Retail Business Owner,2021-08-03,Low,Russia,Verified,False
+CUST90260,Aditya Kulkarni,64,Freelancer,2024-03-16,Low,Cayman Islands,Pending,False
+CUST90261,Rohan Das,40,NGO Worker,2021-04-23,Low,Singapore,Pending,False
+CUST90262,Arjun Verma,39,Crypto Trader,2023-04-20,High,Russia,Verified,False
+CUST90263,Aditya Kulkarni,38,Crypto Trader,2022-06-21,Low,Nigeria,Verified,False
+CUST90264,Manish Chawla,34,NGO Worker,2021-12-03,Medium,Russia,Verified,False
+CUST90265,Rohan Das,51,Freelancer,2020-09-18,Low,Nigeria,Verified,False
+CUST90266,Rahul Mehta,27,Retail Business Owner,2023-01-18,Medium,Singapore,Verified,False
+CUST90267,Isha Sethi,57,Retail Business Owner,2019-03-02,Low,Cayman Islands,Verified,False
+CUST90268,Arjun Verma,49,NGO Worker,2020-06-07,Medium,UAE,Verified,False
+CUST90269,Anita Sharma,31,Real Estate Agent,2019-10-25,Low,Cayman Islands,Verified,False
+CUST90270,Pooja Nair,34,Freelancer,2019-06-15,Low,India,Pending,False
+CUST90271,Vikram Patel,33,Retail Business Owner,2021-04-09,Low,Nigeria,Verified,False
+CUST90272,Nisha Bansal,25,Retail Business Owner,2022-10-14,Medium,Russia,Verified,False
+CUST90273,Nisha Bansal,26,Crypto Trader,2021-05-24,Low,Cayman Islands,Verified,True
+CUST90274,Vikram Patel,40,Investment Analyst,2022-09-23,Low,UK,Verified,True
+CUST90275,Sanjay Gupta,31,Software Engineer,2021-06-11,Low,USA,Verified,False
+CUST90276,Aditya Kulkarni,51,Retail Business Owner,2023-04-17,Medium,Nigeria,Verified,False
+CUST90277,Isha Sethi,41,Travel Agent,2022-07-27,Medium,UK,Verified,False
+CUST90278,Arjun Verma,44,Crypto Trader,2022-06-23,Medium,Nigeria,Verified,False
+CUST90279,Nisha Bansal,45,Freelancer,2021-06-18,Low,Nigeria,Verified,False
+CUST90280,Sanjay Gupta,23,Investment Analyst,2023-02-17,Low,Cayman Islands,Enhanced Due Diligence,False
+CUST90281,Sneha Iyer,60,Freelancer,2019-03-07,Low,Nigeria,Verified,False
+CUST90282,Manish Chawla,24,Travel Agent,2019-11-12,High,UK,Verified,False
+CUST90283,Meera Joshi,54,Financial Advisor,2020-06-30,High,Russia,Verified,False
+CUST90284,Amit Khanna,37,Crypto Trader,2022-01-31,Low,India,Verified,False
+CUST90285,Karan Malhotra,34,Investment Analyst,2020-03-29,Low,Singapore,Verified,False
+CUST90286,Aditya Kulkarni,32,Investment Analyst,2021-07-29,Medium,Nigeria,Verified,False
+CUST90287,Nisha Bansal,56,Import Export Business,2021-07-30,Low,Russia,Verified,False
+CUST90288,Sanjay Gupta,32,Real Estate Agent,2024-05-15,Medium,UAE,Verified,False
+CUST90289,Nisha Bansal,50,Logistics Manager,2023-10-05,Medium,Nigeria,Pending,False
+CUST90290,Pooja Nair,36,Financial Advisor,2023-10-25,Medium,Cayman Islands,Verified,False
+CUST90291,Sanjay Gupta,28,Travel Agent,2019-02-27,Low,USA,Pending,False
+CUST90292,Vikram Patel,51,Consultant,2024-01-06,Medium,UK,Verified,False
+CUST90293,Divya Rao,27,Financial Advisor,2023-11-18,Low,UK,Enhanced Due Diligence,False
+CUST90294,Meera Joshi,58,Consultant,2019-01-21,Low,UK,Enhanced Due Diligence,False
+CUST90295,Vikram Patel,59,Crypto Trader,2019-12-07,Medium,Russia,Verified,False
+CUST90296,Sneha Iyer,51,NGO Worker,2019-04-17,Low,UAE,Enhanced Due Diligence,False
+CUST90297,Anita Sharma,36,Investment Analyst,2020-09-18,Medium,USA,Verified,False
+CUST90298,Rakesh Singh,41,Retail Business Owner,2024-03-03,Medium,India,Pending,False
+CUST90299,Rahul Mehta,56,Consultant,2021-07-21,Low,Nigeria,Enhanced Due Diligence,False
+CUST90300,Anita Sharma,59,Logistics Manager,2023-07-22,Low,India,Verified,False
+CUST90301,Amit Khanna,58,Import Export Business,2024-06-21,Medium,Cayman Islands,Verified,True
+CUST90302,Nisha Bansal,31,Consultant,2019-08-19,Low,Nigeria,Verified,False
+CUST90303,Aditya Kulkarni,59,Software Engineer,2022-01-30,Low,USA,Verified,False
+CUST90304,Priya Desai,53,Real Estate Agent,2022-05-03,Low,Cayman Islands,Pending,False
+CUST90305,Rohan Das,39,Import Export Business,2021-04-05,Low,USA,Pending,False
+CUST90306,Rahul Mehta,60,Financial Advisor,2021-10-21,High,Nigeria,Pending,False
+CUST90307,Meera Joshi,35,Real Estate Agent,2019-07-10,Medium,UAE,Pending,False
+CUST90308,Neha Kapoor,25,Investment Analyst,2022-12-13,Low,UAE,Verified,False
+CUST90309,Karan Malhotra,46,Consultant,2024-02-06,Low,Russia,Verified,False
+CUST90310,Nisha Bansal,33,Retail Business Owner,2019-03-21,Low,Cayman Islands,Pending,False
+CUST90311,Vikram Patel,60,Investment Analyst,2021-05-08,Low,UK,Enhanced Due Diligence,False
+CUST90312,Rahul Mehta,29,Logistics Manager,2020-10-17,Medium,India,Pending,False
+CUST90313,Amit Khanna,42,Freelancer,2022-04-04,High,Nigeria,Verified,False
+CUST90314,Priya Desai,56,Real Estate Agent,2022-11-04,Low,UK,Verified,False
+CUST90315,Sanjay Gupta,26,Travel Agent,2019-11-27,Low,UK,Verified,False
+CUST90316,Manish Chawla,27,Travel Agent,2024-02-12,Medium,Nigeria,Pending,False
+CUST90317,Karan Malhotra,61,NGO Worker,2020-12-30,Low,Cayman Islands,Pending,True
+CUST90318,Rohan Das,39,Real Estate Agent,2023-05-26,Medium,Russia,Enhanced Due Diligence,False
+CUST90319,Nisha Bansal,33,Financial Advisor,2019-01-27,Medium,India,Verified,False
+CUST90320,Karan Malhotra,24,Freelancer,2022-04-24,Low,India,Pending,False
+CUST90321,Neha Kapoor,48,Logistics Manager,2022-05-27,Medium,UAE,Pending,False
+CUST90322,Amit Khanna,32,Logistics Manager,2021-08-07,High,Nigeria,Verified,False
+CUST90323,Amit Khanna,51,Retail Business Owner,2023-09-18,High,UAE,Verified,False
+CUST90324,Priya Desai,36,Freelancer,2023-08-01,Medium,UAE,Pending,True
+CUST90325,Nisha Bansal,57,Travel Agent,2020-04-27,Medium,USA,Verified,False
+CUST90326,Rahul Mehta,59,Financial Advisor,2023-09-08,Low,UK,Enhanced Due Diligence,False
+CUST90327,Karan Malhotra,47,Crypto Trader,2021-03-25,Low,UAE,Pending,False
+CUST90328,Amit Khanna,45,Logistics Manager,2024-01-19,Medium,Singapore,Verified,False
+CUST90329,Amit Khanna,51,Logistics Manager,2022-06-01,High,Russia,Pending,True
+CUST90330,Sanjay Gupta,37,Software Engineer,2021-04-19,Low,UAE,Verified,False
+CUST90331,Aditya Kulkarni,40,Investment Analyst,2023-02-08,Low,Cayman Islands,Verified,False
+CUST90332,Sanjay Gupta,24,Software Engineer,2022-08-19,Low,UK,Verified,False
+CUST90333,Sneha Iyer,51,Financial Advisor,2022-07-24,High,USA,Pending,False
+CUST90334,Pooja Nair,34,NGO Worker,2021-08-15,Low,India,Verified,True
+CUST90335,Karan Malhotra,32,Software Engineer,2020-08-03,Low,Singapore,Pending,False
+CUST90336,Sanjay Gupta,58,Consultant,2022-03-14,Low,UAE,Verified,False
+CUST90337,Isha Sethi,63,Import Export Business,2022-12-25,Low,Singapore,Enhanced Due Diligence,False
+CUST90338,Priya Desai,55,Real Estate Agent,2021-08-17,Low,India,Verified,False
+CUST90339,Rahul Mehta,43,Software Engineer,2021-05-26,Low,UAE,Verified,False
+CUST90340,Arjun Verma,26,Crypto Trader,2023-02-28,High,Singapore,Verified,False
+CUST90341,Aditya Kulkarni,50,Software Engineer,2023-11-06,Low,Cayman Islands,Verified,False
+CUST90342,Anita Sharma,36,Software Engineer,2022-08-19,Medium,Nigeria,Pending,False
+CUST90343,Priya Desai,57,NGO Worker,2020-12-16,Low,UAE,Verified,False
+CUST90344,Meera Joshi,57,Investment Analyst,2021-06-25,Medium,Nigeria,Verified,False
+CUST90345,Divya Rao,49,Financial Advisor,2021-01-14,Low,UAE,Verified,False
+CUST90346,Sneha Iyer,25,Investment Analyst,2019-07-18,Low,USA,Pending,False
+CUST90347,Tarun Jain,53,Import Export Business,2023-08-20,Medium,Nigeria,Pending,False
+CUST90348,Rahul Mehta,47,Real Estate Agent,2019-03-07,Low,Russia,Enhanced Due Diligence,True
+CUST90349,Arjun Verma,50,Crypto Trader,2020-10-12,Low,India,Verified,False
+CUST90350,Arjun Verma,46,Consultant,2020-07-30,Low,Singapore,Enhanced Due Diligence,False
+CUST90351,Priya Desai,46,Crypto Trader,2022-04-28,Low,UK,Verified,False
+CUST90352,Sneha Iyer,46,Investment Analyst,2020-06-07,High,UK,Verified,False
+CUST90353,Anita Sharma,43,Freelancer,2021-07-10,Low,USA,Verified,False
+CUST90354,Karan Malhotra,27,Real Estate Agent,2020-02-14,Low,Russia,Verified,False
+CUST90355,Manish Chawla,29,Financial Advisor,2019-10-12,Low,USA,Verified,False
+CUST90356,Vikram Patel,62,Retail Business Owner,2023-11-24,Low,USA,Verified,False
+CUST90357,Manish Chawla,60,Logistics Manager,2019-03-02,Low,India,Pending,False
+CUST90358,Priya Desai,43,Real Estate Agent,2023-09-07,Low,USA,Verified,False
+CUST90359,Tarun Jain,62,Travel Agent,2021-07-19,Medium,USA,Pending,False
+CUST90360,Karan Malhotra,40,Logistics Manager,2021-04-23,Low,Nigeria,Pending,False
+CUST90361,Anita Sharma,48,Real Estate Agent,2020-04-06,Low,UK,Verified,False
+CUST90362,Rohan Das,55,Travel Agent,2021-09-27,Medium,Singapore,Verified,False
+CUST90363,Rakesh Singh,37,Logistics Manager,2023-12-21,Low,Nigeria,Verified,False
+CUST90364,Sneha Iyer,50,Software Engineer,2022-10-19,Low,Cayman Islands,Verified,False
+CUST90365,Aditya Kulkarni,46,NGO Worker,2023-08-25,Low,Nigeria,Verified,False
+CUST90366,Anita Sharma,55,Retail Business Owner,2021-08-20,Low,Nigeria,Verified,False
+CUST90367,Pooja Nair,25,Freelancer,2020-12-20,Medium,UAE,Verified,True
+CUST90368,Amit Khanna,58,Real Estate Agent,2022-09-12,Medium,Russia,Verified,False
+CUST90369,Neha Kapoor,64,Software Engineer,2021-03-25,Low,UAE,Verified,False
+CUST90370,Arjun Verma,26,Financial Advisor,2019-12-02,Low,India,Pending,False
+CUST90371,Manish Chawla,48,Financial Advisor,2019-11-09,Low,Russia,Verified,False
+CUST90372,Karan Malhotra,44,Consultant,2020-12-06,Low,Russia,Verified,False
+CUST90373,Tarun Jain,48,Logistics Manager,2022-07-08,Low,Singapore,Verified,False
+CUST90374,Tarun Jain,53,Investment Analyst,2019-04-07,Low,Cayman Islands,Verified,True
+CUST90375,Aditya Kulkarni,54,Real Estate Agent,2019-11-11,Medium,USA,Verified,False
+CUST90376,Meera Joshi,64,Crypto Trader,2023-04-04,High,UAE,Verified,False
+CUST90377,Neha Kapoor,56,Logistics Manager,2023-08-30,Low,UAE,Verified,False
+CUST90378,Anita Sharma,56,Real Estate Agent,2021-07-30,Low,Russia,Verified,False
+CUST90379,Arjun Verma,58,Financial Advisor,2023-12-11,Low,Singapore,Verified,False
+CUST90380,Aditya Kulkarni,63,Logistics Manager,2022-06-21,Low,India,Verified,False
+CUST90381,Manish Chawla,40,Financial Advisor,2023-08-08,Medium,UK,Enhanced Due Diligence,False
+CUST90382,Nisha Bansal,22,Retail Business Owner,2021-04-13,Low,UK,Pending,False
+CUST90383,Arjun Verma,32,Crypto Trader,2019-03-17,Low,USA,Verified,False
+CUST90384,Nisha Bansal,39,Consultant,2019-05-31,Medium,Russia,Verified,False
+CUST90385,Rahul Mehta,29,NGO Worker,2020-02-25,Low,UK,Pending,False
+CUST90386,Aditya Kulkarni,53,Crypto Trader,2019-12-18,Low,Russia,Pending,False
+CUST90387,Nisha Bansal,60,Travel Agent,2020-04-19,High,USA,Verified,False
+CUST90388,Rahul Mehta,44,Travel Agent,2024-04-20,Low,Singapore,Verified,False
+CUST90389,Rohan Das,45,Software Engineer,2021-02-20,High,Singapore,Pending,False
+CUST90390,Arjun Verma,44,Real Estate Agent,2021-01-12,Low,Russia,Verified,False
+CUST90391,Karan Malhotra,42,Retail Business Owner,2021-02-28,Low,Cayman Islands,Verified,False
+CUST90392,Arjun Verma,26,Real Estate Agent,2019-05-12,Low,Nigeria,Verified,False
+CUST90393,Anita Sharma,39,Consultant,2021-01-09,Medium,USA,Verified,False
+CUST90394,Nisha Bansal,42,Import Export Business,2021-08-18,Medium,India,Verified,False
+CUST90395,Tarun Jain,27,Investment Analyst,2020-08-31,High,India,Verified,False
+CUST90396,Tarun Jain,35,NGO Worker,2021-08-29,Low,India,Pending,False
+CUST90397,Nisha Bansal,62,NGO Worker,2020-08-01,High,Cayman Islands,Verified,False
+CUST90398,Sneha Iyer,61,NGO Worker,2023-03-13,Medium,Russia,Pending,False
+CUST90399,Divya Rao,30,Crypto Trader,2020-02-24,Low,Russia,Enhanced Due Diligence,False
+CUST90400,Rahul Mehta,55,Financial Advisor,2024-04-28,Medium,Singapore,Pending,False
+CUST90401,Rakesh Singh,22,Logistics Manager,2023-09-29,Medium,Cayman Islands,Verified,False
+CUST90402,Anita Sharma,64,Freelancer,2020-05-24,Low,USA,Verified,False
+CUST90403,Divya Rao,49,Retail Business Owner,2019-12-09,Medium,India,Verified,False
+CUST90404,Rakesh Singh,59,Financial Advisor,2024-02-05,Low,India,Verified,False
+CUST90405,Divya Rao,57,Import Export Business,2019-11-21,Low,UK,Verified,False
+CUST90406,Tarun Jain,57,Logistics Manager,2020-08-16,Low,Nigeria,Verified,False
+CUST90407,Pooja Nair,48,Consultant,2020-05-31,Low,UK,Verified,False
+CUST90408,Rohan Das,63,Travel Agent,2022-01-22,Low,UAE,Verified,False
+CUST90409,Sneha Iyer,61,NGO Worker,2023-06-06,Medium,Singapore,Enhanced Due Diligence,False
+CUST90410,Vikram Patel,47,Financial Advisor,2023-09-12,Low,Singapore,Verified,False
+CUST90411,Neha Kapoor,25,Logistics Manager,2022-09-05,Low,Nigeria,Pending,False
+CUST90412,Neha Kapoor,39,Logistics Manager,2024-02-11,Medium,UAE,Pending,False
+CUST90413,Priya Desai,47,Real Estate Agent,2024-01-27,Low,UAE,Verified,False
+CUST90414,Sanjay Gupta,34,Real Estate Agent,2022-04-10,Medium,Cayman Islands,Verified,False
+CUST90415,Neha Kapoor,36,Crypto Trader,2024-05-08,Low,USA,Enhanced Due Diligence,False
+CUST90416,Rahul Mehta,58,Crypto Trader,2022-08-10,Low,USA,Verified,False
+CUST90417,Arjun Verma,24,Consultant,2019-06-09,High,Singapore,Verified,False
+CUST90418,Priya Desai,43,Consultant,2022-06-09,Low,Nigeria,Pending,False
+CUST90419,Anita Sharma,34,Logistics Manager,2024-03-29,Medium,Singapore,Verified,False
+CUST90420,Tarun Jain,27,Freelancer,2023-08-06,High,UK,Pending,False
+CUST90421,Tarun Jain,52,Crypto Trader,2022-02-07,Medium,Cayman Islands,Pending,False
+CUST90422,Neha Kapoor,62,Real Estate Agent,2022-02-20,Low,Singapore,Pending,False
+CUST90423,Rohan Das,46,Software Engineer,2023-06-06,Low,UAE,Pending,False
+CUST90424,Anita Sharma,42,Import Export Business,2022-03-15,Low,India,Verified,True
+CUST90425,Tarun Jain,41,Crypto Trader,2020-10-06,Low,USA,Pending,False
+CUST90426,Meera Joshi,36,Financial Advisor,2020-10-27,Medium,UAE,Enhanced Due Diligence,False
+CUST90427,Meera Joshi,50,Investment Analyst,2021-02-17,Low,UK,Verified,False
+CUST90428,Meera Joshi,59,NGO Worker,2019-05-01,Low,Singapore,Pending,False
+CUST90429,Anita Sharma,61,Travel Agent,2019-06-23,High,Cayman Islands,Verified,False
+CUST90430,Sneha Iyer,56,Freelancer,2020-05-02,Low,Cayman Islands,Verified,False
+CUST90431,Aditya Kulkarni,28,Investment Analyst,2022-09-05,Low,Russia,Pending,False
+CUST90432,Sanjay Gupta,51,Logistics Manager,2023-05-02,Medium,Nigeria,Verified,False
+CUST90433,Rahul Mehta,57,Freelancer,2021-04-11,Low,USA,Verified,False
+CUST90434,Tarun Jain,32,Travel Agent,2021-05-26,Low,UK,Verified,True
+CUST90435,Meera Joshi,30,Software Engineer,2019-12-09,Medium,Russia,Verified,False
+CUST90436,Rohan Das,28,Real Estate Agent,2022-06-19,Low,India,Verified,False
+CUST90437,Amit Khanna,42,Crypto Trader,2020-08-30,Low,Nigeria,Pending,False
+CUST90438,Arjun Verma,24,Retail Business Owner,2023-10-21,Low,Nigeria,Pending,False
+CUST90439,Amit Khanna,40,Retail Business Owner,2021-11-06,Low,Singapore,Verified,False
+CUST90440,Nisha Bansal,24,Crypto Trader,2021-11-30,Low,USA,Verified,False
+CUST90441,Tarun Jain,23,Software Engineer,2023-03-06,Low,Cayman Islands,Pending,False
+CUST90442,Rahul Mehta,54,Import Export Business,2019-01-19,Medium,Singapore,Verified,False
+CUST90443,Rohan Das,58,NGO Worker,2022-10-10,High,India,Pending,False
+CUST90444,Nisha Bansal,49,Freelancer,2022-02-03,Low,UK,Verified,False
+CUST90445,Arjun Verma,53,Import Export Business,2019-11-11,Low,India,Verified,False
+CUST90446,Rahul Mehta,62,Freelancer,2020-07-21,Medium,Singapore,Pending,False
+CUST90447,Anita Sharma,65,NGO Worker,2022-04-11,Low,India,Pending,False
+CUST90448,Tarun Jain,31,Import Export Business,2020-06-27,Medium,India,Verified,False
+CUST90449,Neha Kapoor,32,Real Estate Agent,2024-03-20,Medium,UAE,Verified,False
+CUST90450,Rahul Mehta,27,Financial Advisor,2022-10-09,Low,USA,Verified,False
+CUST90451,Amit Khanna,31,Travel Agent,2023-09-05,Medium,Cayman Islands,Verified,False
+CUST90452,Pooja Nair,53,Logistics Manager,2022-04-02,Medium,Nigeria,Verified,False
+CUST90453,Sneha Iyer,61,NGO Worker,2022-05-11,Low,Singapore,Verified,False
+CUST90454,Tarun Jain,63,Real Estate Agent,2024-04-22,Low,Russia,Verified,False
+CUST90455,Rohan Das,56,Real Estate Agent,2022-07-09,Low,UAE,Verified,False
+CUST90456,Rakesh Singh,37,NGO Worker,2023-03-26,Low,India,Pending,False
+CUST90457,Pooja Nair,33,Real Estate Agent,2023-12-13,Low,India,Pending,False
+CUST90458,Karan Malhotra,26,Real Estate Agent,2021-12-10,Low,Nigeria,Pending,False
+CUST90459,Arjun Verma,62,Consultant,2019-03-14,Low,India,Verified,False
+CUST90460,Sanjay Gupta,41,Consultant,2022-08-30,Low,UK,Verified,False
+CUST90461,Priya Desai,33,Software Engineer,2022-12-14,Low,India,Verified,False
+CUST90462,Sanjay Gupta,43,Real Estate Agent,2022-09-19,Low,Nigeria,Verified,False
+CUST90463,Tarun Jain,48,Software Engineer,2022-10-06,High,Cayman Islands,Verified,False
+CUST90464,Manish Chawla,55,Retail Business Owner,2023-02-24,Low,Russia,Verified,False
+CUST90465,Pooja Nair,54,Software Engineer,2019-12-13,Low,Russia,Verified,False
+CUST90466,Isha Sethi,52,Logistics Manager,2019-09-09,Low,Russia,Verified,False
+CUST90467,Karan Malhotra,63,Crypto Trader,2019-09-16,Low,Cayman Islands,Verified,False
+CUST90468,Tarun Jain,62,Consultant,2019-03-20,High,UK,Verified,True
+CUST90469,Rakesh Singh,32,NGO Worker,2020-02-16,Low,UAE,Verified,False
+CUST90470,Sanjay Gupta,62,Software Engineer,2023-09-25,High,Russia,Verified,False
+CUST90471,Anita Sharma,26,Crypto Trader,2024-05-24,Medium,Singapore,Verified,False
+CUST90472,Divya Rao,32,NGO Worker,2023-06-21,Medium,UK,Verified,False
+CUST90473,Rakesh Singh,60,Real Estate Agent,2019-08-24,Low,UAE,Pending,False
+CUST90474,Rahul Mehta,38,Retail Business Owner,2021-03-10,Low,UK,Verified,False
+CUST90475,Divya Rao,24,Logistics Manager,2020-10-12,Low,UAE,Pending,False
+CUST90476,Meera Joshi,59,NGO Worker,2020-10-12,Low,UK,Verified,False
+CUST90477,Aditya Kulkarni,25,Crypto Trader,2020-08-06,Low,UAE,Verified,False
+CUST90478,Sanjay Gupta,64,NGO Worker,2020-07-11,Low,USA,Verified,False
+CUST90479,Rahul Mehta,49,Investment Analyst,2020-03-22,Low,India,Pending,False
+CUST90480,Neha Kapoor,51,Software Engineer,2022-05-07,Medium,Russia,Enhanced Due Diligence,False
+CUST90481,Anita Sharma,54,Consultant,2022-03-26,Medium,Nigeria,Pending,False
+CUST90482,Nisha Bansal,43,Logistics Manager,2022-06-16,Low,Russia,Verified,False
+CUST90483,Karan Malhotra,41,NGO Worker,2021-05-04,Medium,Singapore,Verified,False
+CUST90484,Sneha Iyer,23,Investment Analyst,2021-08-15,Low,Russia,Verified,False
+CUST90485,Divya Rao,26,Financial Advisor,2021-04-22,Medium,Singapore,Verified,False
+CUST90486,Vikram Patel,44,Import Export Business,2023-08-01,Low,USA,Verified,False
+CUST90487,Aditya Kulkarni,41,Logistics Manager,2022-12-05,Low,Cayman Islands,Verified,False
+CUST90488,Meera Joshi,54,Investment Analyst,2021-05-11,Low,UAE,Verified,False
+CUST90489,Priya Desai,43,Travel Agent,2021-08-05,Low,UAE,Verified,False
+CUST90490,Priya Desai,50,Import Export Business,2024-02-25,Medium,India,Verified,False
+CUST90491,Vikram Patel,63,Retail Business Owner,2020-02-21,Low,Nigeria,Verified,False
+CUST90492,Anita Sharma,27,Consultant,2020-07-10,Low,Cayman Islands,Verified,False
+CUST90493,Sneha Iyer,54,Software Engineer,2023-12-03,Medium,UAE,Verified,False
+CUST90494,Pooja Nair,52,Freelancer,2020-09-06,Medium,India,Verified,False
+CUST90495,Sanjay Gupta,55,Freelancer,2022-10-06,Low,USA,Verified,False
+CUST90496,Rahul Mehta,55,Logistics Manager,2024-06-10,Low,Cayman Islands,Enhanced Due Diligence,False
+CUST90497,Pooja Nair,60,Software Engineer,2022-10-06,Medium,Russia,Verified,False
+CUST90498,Arjun Verma,38,Crypto Trader,2020-04-09,Low,India,Enhanced Due Diligence,False
+CUST90499,Meera Joshi,47,NGO Worker,2024-03-15,Low,India,Verified,False
