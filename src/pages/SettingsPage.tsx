@@ -4,12 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
-import { Shield, Key, Clock, Users, Bell, UserPlus } from "lucide-react";
+import { Shield, Key, Clock, Users, Bell, UserPlus, RotateCcw } from "lucide-react";
 import { useState } from "react";
 import { useSARData } from "@/context/SARDataContext";
+import { useToast } from "@/hooks/use-toast";
+
+const LANDING_STORAGE_KEY = "sarGuardian.hasEntered";
 
 export default function SettingsPage() {
   const { systemUsers, addSystemUser } = useSARData();
+  const { toast } = useToast();
   const [newUser, setNewUser] = useState({
     name: "",
     email: "",
@@ -36,6 +40,17 @@ export default function SettingsPage() {
       role: "Analyst",
       status: "Active",
     });
+  }
+
+  function handleResetIntro() {
+    window.localStorage.removeItem(LANDING_STORAGE_KEY);
+    toast({
+      title: "Intro reset",
+      description: "The welcome landing screen will be shown again.",
+    });
+    window.setTimeout(() => {
+      window.location.assign("/");
+    }, 200);
   }
 
   return (
@@ -222,6 +237,25 @@ export default function SettingsPage() {
                   <p className="text-sm font-semibold text-foreground mt-1">{s.value}</p>
                 </div>
               ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="shadow-card">
+          <CardHeader>
+            <CardTitle className="text-base flex items-center gap-2"><RotateCcw className="w-4 h-4" /> Experience</CardTitle>
+            <CardDescription>Control first-visit onboarding behavior</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="flex flex-col gap-3 rounded-lg border border-border bg-muted/30 p-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-medium text-foreground">Reset intro screen</p>
+                <p className="text-xs text-muted-foreground">Show the landing page again before entering the system.</p>
+              </div>
+              <Button variant="outline" onClick={handleResetIntro} className="gap-2">
+                <RotateCcw className="h-4 w-4" />
+                Reset Intro
+              </Button>
             </div>
           </CardContent>
         </Card>

@@ -1,5 +1,7 @@
 // Synthetic data for SAR Narrative Generator
 
+import type { FullSARReport } from "@/lib/csvLoader";
+
 export type RiskLevel = "high" | "medium" | "low";
 export type SARStatus = "draft" | "review" | "approved" | "filed";
 export type TransactionStatus = "flagged" | "cleared" | "pending" | "under_review";
@@ -35,15 +37,19 @@ export interface Transaction {
 export interface SARReport {
   id: string;
   transactionIds: string[];
+  caseId?: string;
+  sourceTransactionId?: string;
   customerId: string;
   customerName: string;
   status: SARStatus;
   createdAt: string;
   updatedAt: string;
+  generatedAt?: string;
   assignedTo: string;
   confidenceScore: number;
   modelUsed: string;
   promptVersion: string;
+  lifecycleVersion?: number;
   narrative?: string;
   daysRemaining: number;
   priority: RiskLevel;
@@ -56,6 +62,22 @@ export interface SARReport {
   triggerRules?: { id: string; name: string; confidence: number }[];
   evidenceAnchors?: string[];
   timelineEvents?: { date: string; event: string }[];
+  draftReportSnapshot?: FullSARReport;
+  finalReportSnapshot?: FullSARReport;
+  changeHistory?: {
+    timestamp: string;
+    stage: "investigation" | "review" | "approval" | "filing";
+    actor: string;
+    layer?: number;
+    summary: string;
+    changes: { field: string; previous: string; current: string }[];
+  }[];
+  filingStamp?: {
+    caseId: string;
+    filedAt: string;
+    filedBy: string;
+    statusLabel: "Filed SAR Report";
+  };
 }
 
 export interface AuditEntry {
@@ -180,15 +202,19 @@ export const sarReports: SARReport[] = Array.from({ length: 20 }, (_, i) => {
   return {
     id: `SAR-${String(2026000 + 4891 + i)}`,
     transactionIds: relatedTxs.map((t) => t.id),
+    caseId: `CASE-${String(2026000 + 4891 + i)}`,
+    sourceTransactionId: relatedTxs[0]?.id,
     customerId: flaggedTransactions[i]?.customerId || customers[0].id,
     customerName: customer,
     status,
     createdAt: generateDate(randomBetween(1, 30)),
     updatedAt: generateDate(randomBetween(0, 5)),
+    generatedAt: generateDate(randomBetween(1, 30)),
     assignedTo: randomFrom(analysts),
     confidenceScore: randomBetween(75, 98),
     modelUsed: randomFrom(models),
     promptVersion: `v${randomBetween(2, 3)}.${randomBetween(0, 5)}.${randomBetween(0, 9)}`,
+    lifecycleVersion: 1,
     daysRemaining: status === "filed" ? 0 : randomBetween(1, 7),
     priority: randomFrom<RiskLevel>(["high", "medium", "low"]),
     narrative: randomFrom(narrativeSnippets),

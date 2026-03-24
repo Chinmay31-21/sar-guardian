@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { useSARData } from "@/context/SARDataContext";
 import { getRegulatoryBreaches } from "@/lib/csvLoader";
 import type { SARReport, SARStatus } from "@/data/synthetic";
@@ -6,20 +6,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
-  Clock, User, Shield, X, FileText, CheckSquare, Square,
+  Clock, User, Shield, X, FileText, CheckSquare, Square, CheckCircle,
   AlertCircle, AlertTriangle, ThumbsUp, ThumbsDown, RotateCcw,
-  ChevronRight, Gavel,
+  ChevronRight, Gavel, Layers, Eye, Maximize2, Minimize2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useProfile } from "@/context/ProfileContext";
+import { createSarReportPdfBlob } from "@/lib/pdfExport";
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
 
 const COLUMNS: { status: SARStatus; label: string; color: string; borderColor: string }[] = [
   { status: "draft", label: "Draft", color: "bg-muted/60", borderColor: "border-muted-foreground/20" },
-  { status: "review", label: "In Review", color: "bg-amber-500/10", borderColor: "border-amber-500/30" },
-  { status: "approved", label: "Approved", color: "bg-primary/10", borderColor: "border-primary/30" },
+  { status: "review", label: "Review Queue", color: "bg-amber-500/10", borderColor: "border-amber-500/30" },
+  { status: "approved", label: "Approval Queue", color: "bg-primary/10", borderColor: "border-primary/30" },
   { status: "filed", label: "Filed", color: "bg-green-500/10", borderColor: "border-green-500/30" },
 ];
 
@@ -37,6 +39,19 @@ const REJECT_REASONS = [
   "Missing beneficial ownership documentation",
   "Regulatory citations incomplete or incorrect",
   "Requires further investigation before filing",
+];
+
+const FALLBACK_PIPELINE_LAYERS = [
+  { layer: 0, title: "External Context Agent" },
+  { layer: 1, title: "Data Intake + Preprocessing" },
+  { layer: 2, title: "Behaviour Modelling (XGBOOST)" },
+  { layer: 3, title: "Anomaly Detection (XGBOOST)" },
+  { layer: 4, title: "Risk Attribution" },
+  { layer: 5, title: "Context Assembly (RAG)" },
+  { layer: 6, title: "LLM Reasoning (LLAMA)" },
+  { layer: 7, title: "SAR Generation" },
+  { layer: 8, title: "Human in the Loop (HIL)" },
+  { layer: 9, title: "Governance & Audit" },
 ];
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
@@ -74,26 +89,55 @@ function getBreachesForSar(sar: SARReport) {
 
 interface SARDetailProps {
   sar: SARReport;
+  availableLayers: { layer: number; title: string }[];
+  onOpenPdfPreview: (sar: SARReport) => void;
+  onSaveEdits: (sar: SARReport, payload: { narrative?: string; evidence?: string[] }) => void;
   onClose: () => void;
   onApprove: (sar: SARReport) => void;
   onReject: (sar: SARReport, reason: string) => void;
   onRequestChanges: (sar: SARReport) => void;
-  onMarkFiled: (sar: SARReport) => void;
+  onRegenerateLayer: (sar: SARReport, layer: number, reason: string) => void;
+  onGenerateFinal: (sar: SARReport) => void;
 }
 
-function SARDetail({ sar, onClose, onApprove, onReject, onRequestChanges, onMarkFiled }: SARDetailProps) {
-  const [activeTab, setActiveTab] = useState<"narrative" | "regulatory" | "checklist" | "timeline">("narrative");
+function SARDetail({
+  sar,
+  availableLayers,
+  onOpenPdfPreview,
+  onSaveEdits,
+  onClose,
+  onApprove,
+  onReject,
+  onRequestChanges,
+  onRegenerateLayer,
+  onGenerateFinal,
+}: SARDetailProps) {
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [activeTab, setActiveTab] = useState<"narrative" | "regulatory" | "checklist" | "timeline" | "changes">("narrative");
   const [checklist, setChecklist] = useState(APPROVAL_CHECKLIST.map(() => false));
   const [rejectReason, setRejectReason] = useState<string | null>(null);
   const [showRejectPicker, setShowRejectPicker] = useState(false);
+  const [showLayerPicker, setShowLayerPicker] = useState(false);
+  const [selectedLayer, setSelectedLayer] = useState<number | null>(null);
+  const [editableNarrative, setEditableNarrative] = useState(sar.narrative || "");
 
   const breaches = useMemo(() => getBreachesForSar(sar), [sar]);
   const allChecked = checklist.every(Boolean);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+    <div
+      className={cn(
+        "fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm",
+        isFullscreen ? "p-0" : "p-4"
+      )}
+    >
       <div
-        className="bg-card border border-border rounded-xl shadow-2xl w-full max-w-3xl max-h-[92vh] flex flex-col"
+        className={cn(
+          "bg-card border border-border shadow-2xl flex flex-col overflow-hidden",
+          isFullscreen
+            ? "w-screen h-screen max-w-none max-h-none rounded-none border-0"
+            : "w-full max-w-4xl max-h-[92vh] rounded-xl"
+        )}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -121,9 +165,17 @@ function SARDetail({ sar, onClose, onApprove, onReject, onRequestChanges, onMark
               </p>
             </div>
           </div>
-          <button onClick={onClose} className="text-muted-foreground hover:text-foreground mt-0.5">
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={() => setIsFullscreen((v) => !v)}
+              className="text-muted-foreground hover:text-foreground mt-0.5"
+            >
+              {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+            </button>
+            <button onClick={onClose} className="text-muted-foreground hover:text-foreground mt-0.5">
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Tabs */}
@@ -134,6 +186,7 @@ function SARDetail({ sar, onClose, onApprove, onReject, onRequestChanges, onMark
               { id: "regulatory" as const, label: `Regulatory (${breaches.length})`, icon: Shield },
               { id: "checklist" as const, label: `Checklist (${checklist.filter(Boolean).length}/${APPROVAL_CHECKLIST.length})`, icon: CheckSquare },
               { id: "timeline" as const, label: "Timeline", icon: Clock },
+              { id: "changes" as const, label: `Changes (${sar.changeHistory?.length || 0})`, icon: Layers },
             ].map((t) => (
               <button
                 key={t.id}
@@ -196,11 +249,41 @@ function SARDetail({ sar, onClose, onApprove, onReject, onRequestChanges, onMark
                     SAR Narrative
                   </p>
                   <div className="p-3 rounded-lg bg-muted/50 border border-border">
-                    <pre className="text-xs font-sans whitespace-pre-wrap leading-relaxed text-foreground">
-                      {sar.narrative}
-                    </pre>
+                    <textarea
+                      className="w-full min-h-[140px] bg-transparent text-xs leading-relaxed text-foreground outline-none resize-y"
+                      value={editableNarrative}
+                      onChange={(e) => setEditableNarrative(e.target.value)}
+                    />
+                  </div>
+                  <div className="flex gap-2">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="text-xs"
+                      onClick={() => onSaveEdits(sar, { narrative: editableNarrative })}
+                    >
+                      Save Draft Edits
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="text-xs"
+                      onClick={() => onOpenPdfPreview(sar)}
+                    >
+                      <Eye className="w-3 h-3 mr-1" />
+                      Preview PDF
+                    </Button>
                   </div>
                 </div>
+
+                {sar.draftReportSnapshot && (
+                  <div className="grid grid-cols-2 gap-2 p-2.5 rounded-lg bg-muted/40 border border-border">
+                    <div className="text-[10px] text-muted-foreground">Case ID: <span className="font-mono text-foreground">{sar.draftReportSnapshot.caseId}</span></div>
+                    <div className="text-[10px] text-muted-foreground">Transactions: <span className="text-foreground">{sar.draftReportSnapshot.txnCount}</span></div>
+                    <div className="text-[10px] text-muted-foreground">Suspicious Txns: <span className="text-foreground">{sar.draftReportSnapshot.suspiciousTxnCount}</span></div>
+                    <div className="text-[10px] text-muted-foreground">Risk Score: <span className="text-foreground">{sar.draftReportSnapshot.riskScore}/100</span></div>
+                  </div>
+                )}
 
                 {/* Evidence anchors */}
                 {sar.evidenceAnchors && (
@@ -321,13 +404,94 @@ function SARDetail({ sar, onClose, onApprove, onReject, onRequestChanges, onMark
                 )}
               </div>
             )}
+
+            {activeTab === "changes" && (
+              <div className="space-y-2">
+                {(!sar.changeHistory || sar.changeHistory.length === 0) && (
+                  <p className="text-xs text-muted-foreground py-4 text-center">No tracked changes for this SAR yet.</p>
+                )}
+                {(sar.changeHistory || []).slice().reverse().map((entry, idx) => (
+                  <div key={`${entry.timestamp}-${idx}`} className="p-3 rounded-lg bg-muted/40 border border-border space-y-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="text-xs font-medium text-foreground">{entry.summary}</div>
+                      <div className="text-[10px] text-muted-foreground">
+                        {new Date(entry.timestamp).toLocaleString()} · {entry.stage}
+                        {entry.layer !== undefined ? ` · L${entry.layer}` : ""}
+                      </div>
+                    </div>
+                    <div className="text-[10px] text-muted-foreground">Actor: {entry.actor}</div>
+                    <div className="space-y-1.5">
+                      {entry.changes.map((c, i) => (
+                        <div key={`${c.field}-${i}`} className="rounded border border-border bg-card p-2">
+                          <div className="text-[10px] font-semibold text-foreground mb-1">{c.field}</div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                            <div className="text-[10px]">
+                              <span className="text-muted-foreground">Previous:</span>
+                              <div className="mt-0.5 rounded bg-muted/40 p-1.5 text-muted-foreground break-words">{c.previous || "—"}</div>
+                            </div>
+                            <div className="text-[10px]">
+                              <span className="text-muted-foreground">Current:</span>
+                              <div className="mt-0.5 rounded bg-primary/5 p-1.5 text-foreground break-words">{c.current || "—"}</div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </ScrollArea>
 
         {/* Footer actions */}
         {(sar.status === "review" || sar.status === "approved") && (
           <div className="border-t border-border p-4 shrink-0">
-            {showRejectPicker ? (
+            {showLayerPicker ? (
+              <div className="space-y-2">
+                <p className="text-xs font-medium text-foreground">Select pipeline layer to regenerate:</p>
+                <div className="max-h-52 overflow-auto space-y-1 pr-1">
+                  {availableLayers.map((l) => (
+                    <button
+                      key={l.layer}
+                      onClick={() => setSelectedLayer(l.layer)}
+                      className={cn(
+                        "w-full text-left text-xs p-2.5 rounded-lg transition-colors border",
+                        selectedLayer === l.layer
+                          ? "bg-primary/10 border-primary/30"
+                          : "bg-muted/50 hover:bg-muted border-transparent"
+                      )}
+                    >
+                      <span className="font-mono mr-2">L{l.layer}</span>
+                      {l.title}
+                    </button>
+                  ))}
+                </div>
+                <div className="flex gap-2 mt-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      setShowLayerPicker(false);
+                      setSelectedLayer(null);
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    size="sm"
+                    disabled={selectedLayer === null}
+                    onClick={() => {
+                      if (selectedLayer === null) return;
+                      onRegenerateLayer(sar, selectedLayer, "Reviewer marked model anomaly");
+                      onClose();
+                    }}
+                  >
+                    Regenerate Draft
+                  </Button>
+                </div>
+              </div>
+            ) : showRejectPicker ? (
               <div className="space-y-2">
                 <p className="text-xs font-medium text-foreground">Select reason for returning SAR:</p>
                 {REJECT_REASONS.map((r) => (
@@ -375,6 +539,18 @@ function SARDetail({ sar, onClose, onApprove, onReject, onRequestChanges, onMark
                     <RotateCcw className="w-3 h-3" />
                     Request Changes
                   </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="text-xs gap-1"
+                    onClick={() => {
+                      setShowLayerPicker(true);
+                      setShowRejectPicker(false);
+                    }}
+                  >
+                    <Layers className="w-3 h-3" />
+                    Regenerate from Layer
+                  </Button>
                 </div>
                 <div className="flex gap-2">
                   {sar.status === "review" && (
@@ -389,14 +565,24 @@ function SARDetail({ sar, onClose, onApprove, onReject, onRequestChanges, onMark
                     </Button>
                   )}
                   {sar.status === "approved" && (
-                    <Button
-                      size="sm"
-                      className="text-xs gap-1 bg-green-600 hover:bg-green-700 text-white"
-                      onClick={() => { onMarkFiled(sar); onClose(); }}
-                    >
-                      <Shield className="w-3 h-3" />
-                      Mark as Filed
-                    </Button>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2 p-2.5 rounded-lg bg-success/5 border border-success/30">
+                        <CheckCircle className="w-4 h-4 mt-0.5 text-success shrink-0" />
+                        <div className="text-xs text-muted-foreground">
+                          <p className="font-medium text-foreground">Automatic Transaction Resolution</p>
+                          <p className="mt-1">Filing this SAR will automatically mark all {sar.transactionIds?.length || 0} linked transactions as resolved and remove them from Flagged Clusters.</p>
+                        </div>
+                      </div>
+                      <Button
+                        size="sm"
+                        className="w-full text-xs gap-1 bg-green-600 hover:bg-green-700 text-white"
+                        disabled={!allChecked}
+                        onClick={() => { onGenerateFinal(sar); onClose(); }}
+                      >
+                        <Shield className="w-3 h-3" />
+                        {allChecked ? "Generate Final SAR Report" : `Checklist (${checklist.filter(Boolean).length}/${APPROVAL_CHECKLIST.length})`}
+                      </Button>
+                    </div>
                   )}
                 </div>
               </div>
@@ -411,9 +597,21 @@ function SARDetail({ sar, onClose, onApprove, onReject, onRequestChanges, onMark
 // ─── Main Component ────────────────────────────────────────────────────────────
 
 export default function ReviewQueue() {
-  const { sarReports, approveSAR, rejectSAR, updateSARStatus } = useSARData();
+  const {
+    sarReports,
+    approveSAR,
+    rejectSAR,
+    updateSARDraftFields,
+    generateFinalSARReport,
+    regenerateSARFromLayer,
+    pipelinesByEntity,
+  } = useSARData();
   const { profile } = useProfile();
   const [selectedSAR, setSelectedSAR] = useState<SARReport | null>(null);
+  const [pdfPreview, setPdfPreview] = useState<{ url: string; filename: string } | null>(null);
+  const [previewLoading, setPreviewLoading] = useState(false);
+  const [pdfFullscreen, setPdfFullscreen] = useState(false);
+  const previewFrameRef = useRef<HTMLIFrameElement>(null);
 
   const columns = useMemo(
     () => COLUMNS.map((col) => ({
@@ -426,6 +624,29 @@ export default function ReviewQueue() {
   const totalReview = sarReports.filter((s) => s.status === "review").length;
   const totalFiled = sarReports.filter((s) => s.status === "filed").length;
   const urgentCount = sarReports.filter((s) => s.status === "review" && s.daysRemaining <= 2).length;
+
+  function handleOpenPdfPreview(sar: SARReport) {
+    const report = sar.finalReportSnapshot || sar.draftReportSnapshot;
+    if (!report) return;
+    const { blob, filename } = createSarReportPdfBlob(report, {
+      engine: "rule_engine_fallback",
+      engineNote: "Review queue preview",
+    });
+    setPreviewLoading(true);
+    setPdfPreview({
+      url: URL.createObjectURL(blob),
+      filename,
+    });
+  }
+
+  function handleClosePdfPreview() {
+    setPdfPreview((prev) => {
+      if (prev?.url) URL.revokeObjectURL(prev.url);
+      return null;
+    });
+    setPreviewLoading(false);
+    setPdfFullscreen(false);
+  }
 
   return (
     <div className="space-y-4 animate-slide-in">
@@ -476,7 +697,7 @@ export default function ReviewQueue() {
       )}
 
       {/* Kanban columns */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 min-w-0">
         {columns.map((col) => (
           <div key={col.status} className="space-y-3">
             {/* Column header */}
@@ -507,12 +728,21 @@ export default function ReviewQueue() {
                   )}
                   onClick={() => setSelectedSAR(sar)}
                 >
-                  <CardContent className="p-3 space-y-2">
+                  <CardContent className="p-3 space-y-2 min-w-0">
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-semibold text-foreground">{sar.id}</span>
                       <Badge variant={priorityVariant(sar.priority)} className="text-[9px]">
                         {sar.priority}
                       </Badge>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-1 text-[10px] text-muted-foreground">
+                      <span className="truncate">Txn: {sar.sourceTransactionId || sar.transactionIds[0] || "-"}</span>
+                      <span className="truncate">Case: {sar.caseId || "-"}</span>
+                      <span>Risk: {sar.priority.toUpperCase()}</span>
+                      <span>Generated: {sar.generatedAt || sar.createdAt}</span>
+                      <span className="truncate">Analyst: {sar.assignedTo}</span>
+                      <span>Status: {sar.status}</span>
                     </div>
 
                     <p className="text-xs text-muted-foreground truncate">{sar.customerName}</p>
@@ -555,11 +785,24 @@ export default function ReviewQueue() {
 
                     <div className="flex items-center justify-between text-[9px] text-muted-foreground">
                       <span className="font-mono">{sar.modelUsed}</span>
-                      {sar.status === "review" && (
-                        <span className="flex items-center gap-0.5 text-primary font-medium">
-                          Review <ChevronRight className="w-2.5 h-2.5" />
-                        </span>
-                      )}
+                      <div className="flex items-center gap-1">
+                        {(sar.status === "review" || sar.status === "approved") && (
+                          <button
+                            className="flex items-center gap-0.5 text-primary font-medium"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleOpenPdfPreview(sar);
+                            }}
+                          >
+                            <Eye className="w-2.5 h-2.5" /> Preview
+                          </button>
+                        )}
+                        {sar.status === "review" && (
+                          <span className="flex items-center gap-0.5 text-primary font-medium">
+                            Review <ChevronRight className="w-2.5 h-2.5" />
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -600,13 +843,69 @@ export default function ReviewQueue() {
       {selectedSAR && (
         <SARDetail
           sar={selectedSAR}
+          availableLayers={
+            pipelinesByEntity[selectedSAR.customerId]?.modules.map((m) => ({
+              layer: m.layer,
+              title: m.title,
+            })) || FALLBACK_PIPELINE_LAYERS
+          }
+          onOpenPdfPreview={handleOpenPdfPreview}
+          onSaveEdits={(sar, payload) =>
+            updateSARDraftFields(sar.id, {
+              narrative: payload.narrative,
+              evidenceAnchors: payload.evidence,
+            })
+          }
           onClose={() => setSelectedSAR(null)}
           onApprove={(sar) => approveSAR(sar.id, profile.name || "Compliance Officer")}
           onReject={(sar, reason) => rejectSAR(sar.id, reason)}
           onRequestChanges={(sar) => rejectSAR(sar.id, "Changes requested by reviewer")}
-          onMarkFiled={(sar) => updateSARStatus(sar.id, "filed")}
+          onRegenerateLayer={(sar, layer, reason) => regenerateSARFromLayer(sar.id, layer, reason)}
+          onGenerateFinal={(sar) => generateFinalSARReport(sar.id, profile.name || "Compliance Officer")}
         />
       )}
+
+      <Dialog open={!!pdfPreview} onOpenChange={(open) => { if (!open) handleClosePdfPreview(); }}>
+        <DialogContent
+          className={cn(
+            "p-0 overflow-hidden flex flex-col",
+            pdfFullscreen
+              ? "w-screen h-screen max-w-none max-h-none rounded-none border-0"
+              : "w-[min(96vw,1200px)] max-w-none h-[90vh] max-h-[90vh]"
+          )}
+        >
+          <DialogHeader className="px-4 py-3 border-b border-border">
+            <div className="flex items-center justify-between gap-2 pr-8">
+              <DialogTitle className="text-sm font-semibold">SAR Draft/Final PDF Preview</DialogTitle>
+              <Button
+                size="sm"
+                variant="outline"
+                className="h-7 text-[11px]"
+                onClick={() => setPdfFullscreen((v) => !v)}
+              >
+                {pdfFullscreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
+                {pdfFullscreen ? "Exit Full Screen" : "Full Screen"}
+              </Button>
+            </div>
+          </DialogHeader>
+          <div className="relative flex-1 min-h-0 bg-muted/20">
+            {previewLoading && (
+              <div className="absolute inset-0 z-10 flex items-center justify-center text-sm text-muted-foreground bg-background/70">
+                Rendering preview...
+              </div>
+            )}
+            {pdfPreview && (
+              <iframe
+                ref={previewFrameRef}
+                src={`${pdfPreview.url}#view=FitH`}
+                className={cn("w-full h-full border-0", previewLoading ? "opacity-0" : "opacity-100")}
+                title={pdfPreview.filename}
+                onLoad={() => setPreviewLoading(false)}
+              />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

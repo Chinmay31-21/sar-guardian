@@ -168,16 +168,17 @@ export default function AppLayout() {
   }
 
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="relative flex min-h-screen bg-background overflow-x-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_8%,rgba(34,211,238,0.14),transparent_38%),radial-gradient(circle_at_86%_88%,rgba(59,130,246,0.12),transparent_38%)]" />
       <AppSidebar
         isOpen={isMobileSidebarOpen}
         onClose={() => setIsMobileSidebarOpen(false)}
         onNavigate={() => setIsMobileSidebarOpen(false)}
       />
 
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 overflow-x-hidden">
         {/* Top bar */}
-        <header className="h-14 border-b border-border flex items-center justify-between px-3 sm:px-5 bg-card shrink-0 sticky top-0 z-20">
+        <header className="h-14 border-b border-border/70 flex items-center justify-between px-3 sm:px-5 bg-card/60 backdrop-blur-xl shrink-0 sticky top-0 z-20">
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
@@ -209,11 +210,11 @@ export default function AppLayout() {
                   handleSearchSelect(searchResults[0]);
                 }
               }}
-              className="pl-9 bg-muted/50 border-none h-9 text-sm"
+              className="pl-9 bg-muted/45 border-input/80 h-9 text-sm"
             />
 
             {searchOpen && searchQ.trim().length > 0 && (
-              <div className="absolute left-0 right-0 top-full mt-2 bg-card border border-border rounded-xl shadow-elevated z-50 overflow-hidden">
+              <div className="absolute left-0 right-0 top-full mt-2 bg-card/85 backdrop-blur-xl border border-border/80 rounded-xl shadow-elevated z-50 overflow-hidden">
                 {searchResults.length === 0 ? (
                   <div className="px-3 py-3 text-xs text-muted-foreground">
                     No matches found for "{searchQ}".
@@ -240,7 +241,7 @@ export default function AppLayout() {
           </div>
 
           {/* Right Section */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             {/* Mobile Search */}
             <button
               className="sm:hidden p-2 hover:bg-muted rounded-lg transition-colors"
@@ -271,7 +272,7 @@ export default function AppLayout() {
               </button>
 
               {notifOpen && (
-                <div className="absolute right-0 top-full mt-2 w-80 sm:w-96 bg-card border border-border rounded-xl shadow-elevated z-50 overflow-hidden">
+                <div className="absolute right-0 top-full mt-2 w-80 sm:w-96 bg-card/85 backdrop-blur-xl border border-border/80 rounded-xl shadow-elevated z-50 overflow-hidden">
                   {/* Panel header */}
                   <div className="flex items-center justify-between px-4 py-3 border-b border-border">
                     <div className="flex items-center gap-2">
@@ -290,7 +291,7 @@ export default function AppLayout() {
                   </div>
 
                   {/* Summary bar */}
-                  <div className="flex items-center gap-3 px-4 py-2 bg-muted/30 border-b border-border text-[10px]">
+                  <div className="flex items-center gap-3 px-4 py-2 bg-muted/30 border-b border-border/80 text-[10px]">
                     {threatSummary.critical > 0 && (
                       <span className="text-red-500 font-semibold">{threatSummary.critical} Critical</span>
                     )}
@@ -369,7 +370,7 @@ export default function AppLayout() {
         </header>
 
         {/* Main content */}
-        <main className="flex-1 p-3 sm:p-6 overflow-auto">
+        <main className="flex-1 p-2.5 sm:p-4 lg:p-6 overflow-auto overflow-x-hidden min-w-0">
           <Outlet />
         </main>
       </div>

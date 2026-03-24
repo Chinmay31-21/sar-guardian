@@ -7,7 +7,7 @@ import {
   CheckCircle, ChevronLeft, ChevronRight, Radio, ShieldOff,
 } from "lucide-react";
 import { useSARData } from "@/context/SARDataContext";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import type { FlagType } from "@/data/synthetic";
 import { cn } from "@/lib/utils";
 
@@ -47,12 +47,31 @@ type TxnItem = {
   date: string;
 };
 
+type FocusState = {
+  focusClusterId?: string;
+  focusTransactionId?: string;
+  flow?: {
+    customerName?: string;
+    amount?: number;
+    riskScore?: number;
+    fromCountry?: string;
+    toCountry?: string;
+    flagType?: string;
+    date?: string;
+    txId?: string;
+    clusterId?: string;
+  };
+};
+
 function buildTxnList(transactions: ReturnType<typeof useSARData>["transactions"]) {
   return transactions;
 }
 
 export default function FlaggedClusters() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const focusState = (location.state as FocusState | null) || null;
+  const focusedClusterId = focusState?.focusClusterId;
   const {
     transactions,
     resolvedClusters,
@@ -173,6 +192,62 @@ export default function FlaggedClusters() {
         </div>
       </div>
 
+      {focusState?.flow && (
+        <Card className="border-primary/40 bg-primary/5 shadow-card">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-semibold">Focused Suspicious Transaction</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs">
+              <div className="rounded-md bg-muted/40 p-2">
+                <p className="text-[10px] text-muted-foreground">Customer</p>
+                <p className="font-medium text-foreground mt-0.5">{focusState.flow.customerName || "Unknown"}</p>
+              </div>
+              <div className="rounded-md bg-muted/40 p-2">
+                <p className="text-[10px] text-muted-foreground">Flow</p>
+                <p className="font-medium text-foreground mt-0.5">
+                  {focusState.flow.fromCountry || "Unknown"} → {focusState.flow.toCountry || "Unknown"}
+                </p>
+              </div>
+              <div className="rounded-md bg-muted/40 p-2">
+                <p className="text-[10px] text-muted-foreground">Risk / Amount</p>
+                <p className="font-medium text-foreground mt-0.5">
+                  {focusState.flow.riskScore ?? "-"} · ${(((focusState.flow.amount || 0) as number) / 1000).toFixed(0)}K
+                </p>
+              </div>
+              <div className="rounded-md bg-muted/40 p-2">
+                <p className="text-[10px] text-muted-foreground">Transaction ID</p>
+                <p className="font-medium text-foreground mt-0.5 font-mono">{focusState.flow.txId || "Unknown"}</p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <Button
+                size="sm"
+                className="text-xs gap-1.5"
+                onClick={() => {
+                  if (!focusedClusterId) return;
+                  beginInvestigation(focusedClusterId, "flagged_clusters");
+                  navigate(`/risk-graph?entity=${encodeURIComponent(focusedClusterId)}`);
+                }}
+                disabled={!focusedClusterId}
+              >
+                <Users className="w-3.5 h-3.5" />
+                Investigate in Entity Mapping
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="text-xs"
+                onClick={() => navigate("/flagged", { replace: true })}
+              >
+                Clear Focus
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       {/* Typology filter chips */}
       <div className="flex flex-wrap gap-2">
         <button
@@ -233,7 +308,8 @@ export default function FlaggedClusters() {
                   riskLevel === "medium" && "border-l-risk-medium",
                   riskLevel === "low" && "border-l-risk-low",
                   isNew && "ring-2 ring-primary/40",
-                  activeInvestigationEntity === cluster.clusterId && "ring-2 ring-primary border-primary/40"
+                  activeInvestigationEntity === cluster.clusterId && "ring-2 ring-primary border-primary/40",
+                  focusedClusterId === cluster.clusterId && "ring-2 ring-primary border-primary/50 bg-primary/5"
                 )}
               >
                 <CardHeader className="pb-2">
@@ -342,7 +418,7 @@ export default function FlaggedClusters() {
                       className="text-xs gap-1.5"
                       onClick={() => {
                         beginInvestigation(cluster.clusterId, "flagged_clusters");
-                        navigate(`/sar/generate?entity=${cluster.clusterId}`);
+                        navigate(`/risk-graph?entity=${encodeURIComponent(cluster.clusterId)}`);
                       }}
                     >
                       <FileText className="w-3.5 h-3.5" />

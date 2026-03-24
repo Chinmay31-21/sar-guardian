@@ -15,7 +15,7 @@ import {
   AlertTriangle, Shield, X, CheckSquare, Square,
   FileText, AlertCircle, Loader2, Network, ChevronRight, ArrowRight,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 // ─── Force-directed layout ─────────────────────────────────────────────────────
 
@@ -152,7 +152,7 @@ const RELATIONSHIP_COLORS: Record<string, string> = {
 export default function RiskGraph() {
   const { data, isLoading } = useCSVData();
   const {
-    addSAR,
+    createOrUpdateSARForEntity,
     beginInvestigation,
     completeInvestigationSAR,
     activeInvestigationEntity,
@@ -160,8 +160,11 @@ export default function RiskGraph() {
     transactions: liveTransactions,
   } = useSARData();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
+  const [manuallySuspiciousNodes, setManuallySuspiciousNodes] = useState<string[]>([]);
+  const [excludedNodes, setExcludedNodes] = useState<string[]>([]);
   const [sarModal, setSarModal] = useState<string | null>(null); // entityId
   const [checklist, setChecklist] = useState<boolean[]>(CHECKLIST_ITEMS.map(() => false));
   const [sarActiveTab, setSarActiveTab] = useState("narrative");
@@ -169,6 +172,26 @@ export default function RiskGraph() {
   const svgRef = useRef<SVGSVGElement>(null);
   const SVG_W = 900;
   const SVG_H = 560;
+
+  useEffect(() => {
+    const entityFromQuery = searchParams.get("entity");
+    const openSar = searchParams.get("action") === "sar";
+    if (!entityFromQuery) return;
+    
+    // Only update if it is different
+    if (selectedNode !== entityFromQuery) {
+      setSelectedNode(entityFromQuery);
+      beginInvestigation(entityFromQuery, "risk_graph");
+    }
+
+    if (openSar && !sarModal && entityFromQuery) {
+      beginInvestigation(entityFromQuery, "risk_graph");
+      setSarModal(entityFromQuery);
+      setChecklist(CHECKLIST_ITEMS.map(() => false));
+      setSarActiveTab("narrative");
+      setGeneratedSarId(null);
+    }
+  }, [searchParams, beginInvestigation, selectedNode, sarModal]);
 
   // ─── Build graph from CSV ────────────────────────────────────────────────────
 
@@ -190,7 +213,9 @@ export default function RiskGraph() {
       strength: Math.max(0.2, Math.min(1, t.riskScore / 100)),
     }));
 
-    const combinedEdges = [...data.networkEdges, ...liveEdges];
+    const combinedEdges = [...data.networkEdges, ...liveEdges].filter(
+      (e) => !excludedNodes.includes(e.entity_a) && !excludedNodes.includes(e.entity_b)
+    );
 
     // Connection count per entity
     const connCount: Record<string, number> = {};
@@ -199,53 +224,74 @@ export default function RiskGraph() {
       connCount[e.entity_b] = (connCount[e.entity_b] ?? 0) + 1;
     }
 
+    // Max risk score per entity from external risk dataset and live context transactions
+    const riskByEntity: Record<string, number> = {};
+    for (const r of data.externalRisk) {
+      riskByEntity[r.entity] = Math.max(riskByEntity[r.entity] ?? 0, r.risk_score);
+    }
+    for (const t of liveTransactions) {
+      riskByEntity[t.customerId] = Math.max(riskByEntity[t.customerId] ?? 0, t.riskScore / 100);
+      if (t.receiverAccount) {
+        riskByEntity[t.receiverAccount] = Math.max(riskByEntity[t.receiverAccount] ?? 0, t.riskScore / 120);
+      }
+    }
+    manuallySuspiciousNodes.forEach((node) => {
+      riskByEntity[node] = Math.max(riskByEntity[node] ?? 0, 0.85);
+    });
+
     // Base graph: top entities by connection density
-    const baseTopNodes = Object.entries(connCount)
+    let baseTopNodes = Object.entries(connCount)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 48)
       .map(([id]) => id);
+
+    const focusEntity = activeInvestigationEntity || selectedNode;
+    
+    if (focusEntity) {
+      // Trace out the suspicious chain: direct connections, plus multi-hop suspicious nodes
+      const chainSet = new Set<string>([focusEntity]);
+      const queue = [focusEntity];
+      let iterations = 0;
+      
+      while (queue.length > 0 && iterations < 3) {
+        const currentLevelSize = queue.length;
+        for (let i = 0; i < currentLevelSize; i++) {
+          const node = queue.shift()!;
+          combinedEdges.forEach((e) => {
+            const neighbor = e.entity_a === node ? e.entity_b : (e.entity_b === node ? e.entity_a : null);
+            if (neighbor && !chainSet.has(neighbor)) {
+              // Add neighbor if it's a direct hop (iterations === 0) OR if it is highly suspicious
+              const isSuspicious = (riskByEntity[neighbor] || 0) >= 0.5;
+              if (iterations === 0 || isSuspicious) {
+                chainSet.add(neighbor);
+                queue.push(neighbor);
+              }
+            }
+          });
+        }
+        iterations++;
+      }
+      
+      // If we have a focus entity, only show the relevant chain!
+      baseTopNodes = Array.from(chainSet);
+    }
 
     // Always include investigated/focused entities so investigation context remains visible.
     const topSet = new Set(baseTopNodes);
     if (activeInvestigationEntity) topSet.add(activeInvestigationEntity);
     if (selectedNode) topSet.add(selectedNode);
     highlightedEntities.forEach((id) => topSet.add(id));
-
-    const focusEntity = activeInvestigationEntity || selectedNode;
-    if (focusEntity) {
-      combinedEdges.forEach((e) => {
-        if (e.entity_a === focusEntity || e.entity_b === focusEntity) {
-          topSet.add(e.entity_a);
-          topSet.add(e.entity_b);
-        }
-      });
-    }
+    manuallySuspiciousNodes.forEach((id) => topSet.add(id));
 
     const topNodes = [...topSet]
       .sort((a, b) => (connCount[b] ?? 0) - (connCount[a] ?? 0))
-      .slice(0, 56);
+      .slice(0, focusEntity ? 80 : 56);
     const finalSet = new Set(topNodes);
 
     // Keep only edges between top nodes
     const filteredEdges = combinedEdges.filter(
       (e) => finalSet.has(e.entity_a) && finalSet.has(e.entity_b)
     );
-
-    // Max risk score per entity from external risk dataset and live context transactions
-    const riskByEntity: Record<string, number> = {};
-    for (const r of data.externalRisk) {
-      if (finalSet.has(r.entity)) {
-        riskByEntity[r.entity] = Math.max(riskByEntity[r.entity] ?? 0, r.risk_score);
-      }
-    }
-    for (const t of liveTransactions) {
-      if (finalSet.has(t.customerId)) {
-        riskByEntity[t.customerId] = Math.max(riskByEntity[t.customerId] ?? 0, t.riskScore / 100);
-      }
-      if (t.receiverAccount && finalSet.has(t.receiverAccount)) {
-        riskByEntity[t.receiverAccount] = Math.max(riskByEntity[t.receiverAccount] ?? 0, t.riskScore / 120);
-      }
-    }
 
     const txnCountByEntity: Record<string, number> = {};
     for (const t of data.transactions) {
@@ -260,7 +306,15 @@ export default function RiskGraph() {
     }
 
     return { topNodes, filteredEdges, combinedEdges, riskByEntity, txnCountByEntity };
-  }, [data, activeInvestigationEntity, highlightedEntities, liveTransactions, selectedNode]);
+  }, [
+    data,
+    activeInvestigationEntity,
+    highlightedEntities,
+    liveTransactions,
+    selectedNode,
+    excludedNodes,
+    manuallySuspiciousNodes,
+  ]);
 
   // Force layout (computed once when nodes/edges change)
   const positions = useMemo(
@@ -283,10 +337,13 @@ export default function RiskGraph() {
   );
 
   useEffect(() => {
+    // We only update selectedNode if it's currently null or different
     if (activeInvestigationEntity && topNodes.includes(activeInvestigationEntity)) {
-      setSelectedNode(activeInvestigationEntity);
+      if (selectedNode !== activeInvestigationEntity && searchParams.get("entity") !== activeInvestigationEntity) {
+        setSelectedNode(activeInvestigationEntity);
+      }
     }
-  }, [activeInvestigationEntity, topNodes]);
+  }, [activeInvestigationEntity, topNodes, selectedNode, searchParams]);
 
   // ─── Selected Entity Details ────────────────────────────────────────────────
 
@@ -469,7 +526,7 @@ export default function RiskGraph() {
       .filter((t) => t.sender_account === sarModal || t.receiver_account === sarModal)
       .reduce((s, t) => s + t.amount, 0);
 
-    const id = addSAR({
+    const id = createOrUpdateSARForEntity({
       customerName: sarModal,
       customerId: sarModal,
       narrative: sarNarrative,
@@ -816,14 +873,47 @@ export default function RiskGraph() {
                             {selectedEntityData.connectedIds.slice(0, 5).map((id) => (
                               <div
                                 key={id}
-                                className="flex items-center gap-2 p-1.5 rounded bg-muted/50 cursor-pointer hover:bg-muted transition-colors"
-                                onClick={() => setSelectedNode(id)}
+                                className="flex items-center gap-2 p-1.5 rounded bg-muted/50 transition-colors"
                               >
                                 <div
                                   className="w-2 h-2 rounded-full shrink-0"
                                   style={{ background: getRiskColor(riskByEntity[id]) }}
                                 />
-                                <span className="text-[10px] font-mono flex-1 truncate">{id}</span>
+                                <button
+                                  className="text-[10px] font-mono flex-1 truncate text-left hover:text-primary"
+                                  onClick={() => {
+                                    setSelectedNode(id);
+                                    beginInvestigation(id, "risk_graph");
+                                  }}
+                                >
+                                  {id}
+                                </button>
+                                <Button
+                                  size="sm"
+                                  variant="outline"
+                                  className="h-6 px-2 text-[9px]"
+                                  onClick={() => {
+                                    setManuallySuspiciousNodes((prev) =>
+                                      prev.includes(id) ? prev : [...prev, id]
+                                    );
+                                    setExcludedNodes((prev) => prev.filter((n) => n !== id));
+                                  }}
+                                >
+                                  Mark Suspicious
+                                </Button>
+                                <Button
+                                  size="sm"
+                                  variant="outline"
+                                  className="h-6 px-2 text-[9px]"
+                                  onClick={() => {
+                                    setExcludedNodes((prev) =>
+                                      prev.includes(id) ? prev : [...prev, id]
+                                    );
+                                    setManuallySuspiciousNodes((prev) => prev.filter((n) => n !== id));
+                                  }}
+                                >
+                                  Not Related
+                                </Button>
                                 <ChevronRight className="w-3 h-3 text-muted-foreground" />
                               </div>
                             ))}
@@ -836,10 +926,10 @@ export default function RiskGraph() {
                             size="sm"
                             className="w-full text-xs"
                             variant="destructive"
-                            onClick={() => handleOpenModal(selectedNode)}
+                            onClick={() => navigate(`/sar/generate?entity=${encodeURIComponent(selectedNode)}&action=draft`)}
                           >
                             <AlertTriangle className="w-3 h-3 mr-1.5" />
-                            Flag as Suspicious & Generate SAR
+                            File and Generate SAR Draft
                           </Button>
                           <Button
                             size="sm"

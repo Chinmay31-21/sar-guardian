@@ -10,6 +10,7 @@ import {
   SARStatus,
   FlagType,
 } from "@/data/synthetic";
+import type { FullSARReport } from "@/lib/csvLoader";
 import { useCsvLiveFeed } from "@/hooks/useCSVData";
 import {
   detectAllThreatsFromData,
@@ -261,8 +262,15 @@ interface SARDataContextValue {
   customers: Customer[];
   // SAR actions
   addSAR: (sar: Partial<SARReport> & { customerName: string; customerId: string }) => string;
+  createOrUpdateSARForEntity: (
+    sar: Partial<SARReport> & { customerName: string; customerId: string }
+  ) => string;
+  updateSARDraftFields: (id: string, fields: Partial<SARReport>) => void;
+  saveSARDraftArtifacts: (id: string, payload: { report: FullSARReport }) => void;
   approveSAR: (id: string, approver: string) => void;
   rejectSAR: (id: string, reason: string) => void;
+  regenerateSARFromLayer: (sarId: string, layer: number, reason?: string) => void;
+  generateFinalSARReport: (sarId: string, authority: string) => void;
   updateSARStatus: (id: string, status: SARStatus) => void;
   // Transaction actions
   addTransaction: (t: Omit<Transaction, "id">) => void;
@@ -280,6 +288,7 @@ interface SARDataContextValue {
     sarId: string,
     pipeline?: InvestigationPipelineReport
   ) => void;
+  clearInvestigationFocus: () => void;
   // Threat intelligence
   threats: DetectedThreat[];
   threatSummary: ThreatSummary;
@@ -432,10 +441,12 @@ export function SARDataProvider({ children }: { children: ReactNode }) {
         status: "review",
         createdAt: now,
         updatedAt: now,
+        generatedAt: now,
         assignedTo: "J. Morrison",
         confidenceScore: randomBetween(78, 96),
         modelUsed: "Claude Sonnet 3.5",
         promptVersion: "v3.2.1",
+        lifecycleVersion: 1,
         daysRemaining: 7,
         priority: "high",
         narrative:
@@ -461,6 +472,134 @@ export function SARDataProvider({ children }: { children: ReactNode }) {
     },
     []
   );
+
+  const createOrUpdateSARForEntity = useCallback(
+    (partial: Partial<SARReport> & { customerName: string; customerId: string }): string => {
+      const now = new Date().toISOString().split("T")[0];
+      const existingOpenSar = sarReports.find(
+        (s) => s.customerId === partial.customerId && s.status !== "filed"
+      );
+
+      if (!existingOpenSar) {
+        return addSAR(partial);
+      }
+
+      setSARReports((prev) =>
+        prev.map((s) =>
+          s.id === existingOpenSar.id
+            ? {
+                ...s,
+                ...partial,
+                status: "review" as SARStatus,
+                updatedAt: now,
+                generatedAt: now,
+                lifecycleVersion: (s.lifecycleVersion ?? 1) + 1,
+                daysRemaining: Math.max(s.daysRemaining || 0, 2),
+                timelineEvents: [
+                  ...(s.timelineEvents || []),
+                  {
+                    date: now,
+                    event: "SAR draft refreshed from latest investigation evidence",
+                  },
+                ],
+              }
+            : s
+        )
+      );
+
+      return existingOpenSar.id;
+    },
+    [addSAR, sarReports]
+  );
+
+  const updateSARDraftFields = useCallback((id: string, fields: Partial<SARReport>) => {
+    const now = new Date().toISOString().split("T")[0];
+    const toText = (v: unknown) => (typeof v === "string" ? v : v === undefined || v === null ? "" : String(v));
+    setSARReports((prev) =>
+      prev.map((s) =>
+        s.id === id
+          ? {
+              ...s,
+              ...fields,
+              updatedAt: now,
+              lifecycleVersion: (s.lifecycleVersion ?? 1) + 1,
+              draftReportSnapshot: s.draftReportSnapshot
+                ? {
+                    ...s.draftReportSnapshot,
+                    dateGenerated: now,
+                    activityDescription: fields.narrative || s.draftReportSnapshot.activityDescription,
+                  }
+                : s.draftReportSnapshot,
+              changeHistory: [
+                ...(s.changeHistory || []),
+                {
+                  timestamp: new Date().toISOString(),
+                  stage: "review",
+                  actor: "Reviewer",
+                  summary: "Draft fields edited",
+                  changes: [
+                    ...(fields.narrative !== undefined
+                      ? [{ field: "narrative", previous: toText(s.narrative), current: toText(fields.narrative) }]
+                      : []),
+                    ...(fields.evidenceAnchors !== undefined
+                      ? [{
+                          field: "evidenceAnchors",
+                          previous: toText((s.evidenceAnchors || []).join(" | ")),
+                          current: toText((fields.evidenceAnchors || []).join(" | ")),
+                        }]
+                      : []),
+                  ],
+                },
+              ],
+              timelineEvents: [
+                ...(s.timelineEvents || []),
+                { date: now, event: "Reviewer edited SAR draft fields" },
+              ],
+            }
+          : s
+      )
+    );
+  }, []);
+
+  const saveSARDraftArtifacts = useCallback((id: string, payload: { report: FullSARReport }) => {
+    const now = new Date().toISOString().split("T")[0];
+    setSARReports((prev) =>
+      prev.map((s) =>
+        s.id === id
+          ? {
+              ...s,
+              caseId: payload.report.caseId,
+              generatedAt: payload.report.dateGenerated,
+              confidenceScore: payload.report.aiConfidence,
+              draftReportSnapshot: payload.report,
+              lifecycleVersion: (s.lifecycleVersion ?? 1) + 1,
+              updatedAt: now,
+              changeHistory: [
+                ...(s.changeHistory || []),
+                {
+                  timestamp: new Date().toISOString(),
+                  stage: "investigation",
+                  actor: "System",
+                  summary: "Draft artifacts synchronized from SAR generation",
+                  changes: [
+                    {
+                      field: "caseId",
+                      previous: s.caseId || "",
+                      current: payload.report.caseId,
+                    },
+                    {
+                      field: "riskScore",
+                      previous: s.draftReportSnapshot ? String(s.draftReportSnapshot.riskScore) : "",
+                      current: String(payload.report.riskScore),
+                    },
+                  ],
+                },
+              ],
+            }
+          : s
+      )
+    );
+  }, []);
 
   const approveSAR = useCallback((id: string, approver: string) => {
     setSARReports((prev) =>
@@ -511,6 +650,161 @@ export function SARDataProvider({ children }: { children: ReactNode }) {
       )
     );
   }, []);
+
+  const regenerateSARFromLayer = useCallback((sarId: string, layer: number, reason?: string) => {
+    const now = new Date().toISOString().split("T")[0];
+    const note = reason?.trim() || "Reviewer requested regeneration";
+
+    setSARReports((prev) =>
+      prev.map((s) => {
+        if (s.id !== sarId) return s;
+
+        const regenerationLine = `Layer ${layer} regeneration requested: ${note}.`;
+        const existingNarrative = s.narrative || "";
+        const patchedNarrative = `${existingNarrative}\n\n[Regeneration Control]\n${regenerationLine}\nThe draft has been recalibrated from the selected pipeline layer and moved back to review.`.trim();
+
+        return {
+          ...s,
+          status: "review" as SARStatus,
+          updatedAt: now,
+          generatedAt: now,
+          lifecycleVersion: (s.lifecycleVersion ?? 1) + 1,
+          promptVersion: `${s.promptVersion}-R${layer}`,
+          narrative: patchedNarrative,
+          draftReportSnapshot: s.draftReportSnapshot
+            ? {
+                ...s.draftReportSnapshot,
+                dateGenerated: now,
+                activityDescription: patchedNarrative,
+                modelVersion: `${s.draftReportSnapshot.modelVersion} / Regenerated-L${layer}`,
+              }
+            : s.draftReportSnapshot,
+          changeHistory: [
+            ...(s.changeHistory || []),
+            {
+              timestamp: new Date().toISOString(),
+              stage: "approval",
+              actor: "Reviewer",
+              layer,
+              summary: `Regenerated from layer ${layer}`,
+              changes: [
+                {
+                  field: "narrative",
+                  previous: s.narrative || "",
+                  current: patchedNarrative,
+                },
+                {
+                  field: "promptVersion",
+                  previous: s.promptVersion,
+                  current: `${s.promptVersion}-R${layer}`,
+                },
+              ],
+            },
+          ],
+          timelineEvents: [
+            ...(s.timelineEvents || []),
+            {
+              date: now,
+              event: `Regenerated from pipeline layer ${layer}: ${note}`,
+            },
+          ],
+        };
+      })
+    );
+  }, []);
+
+  const generateFinalSARReport = useCallback((sarId: string, authority: string) => {
+    const nowIso = new Date().toISOString();
+    const now = nowIso.split("T")[0];
+    
+    // Get SAR to find related transactions and customer
+    const sarToFile = sarReports.find((s) => s.id === sarId);
+    
+    setSARReports((prev) =>
+      prev.map((s) => {
+        if (s.id !== sarId) return s;
+
+        const baseReport = s.draftReportSnapshot;
+        const finalReport: FullSARReport | undefined = baseReport
+          ? {
+              ...baseReport,
+              dateGenerated: now,
+              conclusion: `${baseReport.conclusion}\n\nFiled SAR Case Stamp\nCase ID: ${baseReport.caseId}\nFiling Timestamp: ${nowIso}\nFiling Authority: ${authority}\nStatus: Filed SAR Report`,
+            }
+          : undefined;
+
+        return {
+          ...s,
+          status: "filed" as SARStatus,
+          updatedAt: now,
+          generatedAt: now,
+          lifecycleVersion: (s.lifecycleVersion ?? 1) + 1,
+          finalReportSnapshot: finalReport,
+          changeHistory: [
+            ...(s.changeHistory || []),
+            {
+              timestamp: nowIso,
+              stage: "filing",
+              actor: authority,
+              summary: "Final SAR generated with filed case stamp",
+              changes: [
+                {
+                  field: "status",
+                  previous: s.status,
+                  current: "filed",
+                },
+                {
+                  field: "filingStamp",
+                  previous: s.filingStamp ? `${s.filingStamp.caseId} / ${s.filingStamp.filedAt}` : "",
+                  current: `${s.caseId || baseReport?.caseId || s.id} / ${nowIso}`,
+                },
+              ],
+            },
+          ],
+          filingStamp: {
+            caseId: s.caseId || baseReport?.caseId || s.id,
+            filedAt: nowIso,
+            filedBy: authority,
+            statusLabel: "Filed SAR Report",
+          },
+          timelineEvents: [
+            ...(s.timelineEvents || []),
+            {
+              date: now,
+              event: `Final SAR generated and filed by ${authority}`,
+            },
+          ],
+        };
+      })
+    );
+
+    // Automatically mark related transactions as cleared
+    if (sarToFile && sarToFile.transactionIds && sarToFile.transactionIds.length > 0) {
+      setTransactions((prev) =>
+        prev.map((t) =>
+          sarToFile.transactionIds.includes(t.id)
+            ? { ...t, status: "cleared" as const }
+            : t
+        )
+      );
+    }
+
+    setInvestigations((prev) =>
+      prev.map((i) =>
+        i.latestSarId === sarId
+          ? {
+              ...i,
+              status: "filed",
+            }
+          : i
+      )
+    );
+    
+    // Clear investigation focus if it matches the filed case's customer
+    if (sarToFile && activeInvestigationEntity === sarToFile.customerId) {
+      setActiveInvestigationEntity(null);
+    }
+  }, [sarReports, activeInvestigationEntity]);
 
   const updateSARStatus = useCallback((id: string, status: SARStatus) => {
     setSARReports((prev) =>
@@ -625,6 +919,10 @@ export function SARDataProvider({ children }: { children: ReactNode }) {
     []
   );
 
+  const clearInvestigationFocus = useCallback(() => {
+    setActiveInvestigationEntity(null);
+  }, []);
+
   const addSystemUser = useCallback((user: Omit<SystemUser, "id" | "createdAt">): string => {
     const id = `USR-${String(_userCounter++).padStart(4, "0")}`;
     const createdAt = new Date().toISOString().split("T")[0];
@@ -671,8 +969,13 @@ export function SARDataProvider({ children }: { children: ReactNode }) {
         transactions,
         customers,
         addSAR,
+        createOrUpdateSARForEntity,
+        updateSARDraftFields,
+        saveSARDraftArtifacts,
         approveSAR,
         rejectSAR,
+        regenerateSARFromLayer,
+        generateFinalSARReport,
         updateSARStatus,
         addTransaction,
         resolvedClusters,
@@ -683,6 +986,7 @@ export function SARDataProvider({ children }: { children: ReactNode }) {
         highlightedEntities,
         beginInvestigation,
         completeInvestigationSAR,
+        clearInvestigationFocus,
         threats,
         threatSummary,
         systemUsers,

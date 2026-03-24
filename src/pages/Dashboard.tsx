@@ -33,9 +33,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useMemo, useState } from "react";
 import { useSARData } from "@/context/SARDataContext";
-import { GlobalThreatMap } from "@/components/intelligence/GlobalThreatMap";
-import { EntityRelationshipGraph } from "@/components/intelligence/EntityRelationshipGraph";
-import { RiskRadarChart } from "@/components/intelligence/RiskRadarChart";
+import FlaggedClustersGlobe from "@/components/intelligence/preview";
 import { InvestigationTimeline } from "@/components/intelligence/InvestigationTimeline";
 import { RealTimeAlertFeed } from "@/components/intelligence/RealTimeAlertFeed";
 import { GlobalTransactionHeatmap } from "@/components/intelligence/GlobalTransactionHeatmap";
@@ -188,14 +186,13 @@ export default function Dashboard() {
         {[
           { id: "overview", label: "📊 Overview" },
           { id: "threats", label: "🌍 Threat Map" },
-          { id: "risk", label: "⚖️ Risk Radar" },
           { id: "timeline", label: "📅 Timeline" },
           { id: "alerts", label: "🚨 Alerts" },
           { id: "health", label: "💚 Health" },
         ].map((tab) => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id as "overview" | "threats" | "risk" | "timeline" | "alerts" | "health")}
+            onClick={() => setActiveTab(tab.id as "overview" | "threats" | "timeline" | "alerts" | "health")}
             className={`px-4 py-2 text-sm font-medium rounded-t-lg transition-colors whitespace-nowrap ${
               activeTab === tab.id
                 ? "bg-primary text-primary-foreground border-b-2 border-primary"
@@ -458,41 +455,19 @@ export default function Dashboard() {
 
       {/* Threat Map Tab */}
       {activeTab === "threats" && (
-        <Card className="shadow-card border-primary/20 h-[500px]">
+        <Card className="shadow-card border-primary/20 min-h-[420px] sm:min-h-[500px]">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-semibold">Global Threat Intelligence Map</CardTitle>
           </CardHeader>
           <CardContent className="h-full">
-            <GlobalThreatMap />
+            <FlaggedClustersGlobe title="Real-Time Suspicious Transactions Across Countries" />
           </CardContent>
         </Card>
       )}
 
-      {/* Risk Radar Tab */}
-      {activeTab === "risk" && (
-        <div className="flex flex-col lg:flex-row gap-4">
-          <Card className="shadow-card border-primary/20 flex-1">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-semibold">Multi-Dimensional Risk Analysis</CardTitle>
-            </CardHeader>
-            <CardContent className="h-[450px] flex items-center justify-center">
-              <RiskRadarChart width={350} height={350} />
-            </CardContent>
-          </Card>
-          <Card className="shadow-card border-primary/20 flex-1 h-[500px]">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-semibold">SAR Narrative Generation</CardTitle>
-            </CardHeader>
-            <CardContent className="h-full overflow-auto">
-              <SARNarrativePanel />
-            </CardContent>
-          </Card>
-        </div>
-      )}
-
       {/* Timeline Tab */}
       {activeTab === "timeline" && (
-        <Card className="shadow-card border-primary/20 h-[600px]">
+        <Card className="shadow-card border-primary/20 min-h-[500px] sm:min-h-[600px]">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-semibold">Investigation Timeline & Audit Trail</CardTitle>
           </CardHeader>
@@ -505,7 +480,7 @@ export default function Dashboard() {
       {/* Alerts Tab */}
       {activeTab === "alerts" && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <Card className="shadow-card border-primary/20 h-[500px]">
+          <Card className="shadow-card border-primary/20 min-h-[420px] sm:min-h-[500px]">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-semibold">Real-Time Alert Feed</CardTitle>
             </CardHeader>
@@ -513,7 +488,7 @@ export default function Dashboard() {
               <RealTimeAlertFeed />
             </CardContent>
           </Card>
-          <Card className="shadow-card border-primary/20 h-[500px]">
+          <Card className="shadow-card border-primary/20 min-h-[420px] sm:min-h-[500px]">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-semibold">Transaction Heatmap</CardTitle>
             </CardHeader>
@@ -526,7 +501,7 @@ export default function Dashboard() {
 
       {/* Health Tab */}
       {activeTab === "health" && (
-        <Card className="shadow-card border-primary/20 h-[500px]">
+        <Card className="shadow-card border-primary/20 min-h-[420px] sm:min-h-[500px]">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-semibold">System Health & Performance Metrics</CardTitle>
           </CardHeader>
@@ -536,18 +511,6 @@ export default function Dashboard() {
         </Card>
       )}
 
-      {/* Entity Network (always visible as bonus) */}
-      {activeTab === "overview" && (
-        <Card className="shadow-card border-primary/20 mt-8">
-          <CardHeader className="pb-2 flex flex-row items-center justify-between">
-            <CardTitle className="text-sm font-semibold">Fraud Network Visualization</CardTitle>
-            <Badge variant="outline" className="text-xs">Advanced</Badge>
-          </CardHeader>
-          <CardContent className="h-[400px]">
-            <EntityRelationshipGraph width={800} height={400} />
-          </CardContent>
-        </Card>
-      )}
     </div>
   );
 }

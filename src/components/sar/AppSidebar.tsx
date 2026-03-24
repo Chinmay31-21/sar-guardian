@@ -120,8 +120,8 @@ export default function AppSidebar({
                   "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors w-full",
                   collapsed ? "justify-center px-0 py-2 w-10 mx-auto" : "",
                   isActive(item.to)
-                    ? "bg-sidebar-primary text-sidebar-primary-foreground"
-                    : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                    ? "bg-sidebar-primary text-sidebar-primary-foreground shadow-[0_0_28px_hsl(190_100%_52%_/_0.2)]"
+                    : "text-sidebar-foreground/70 hover:bg-sidebar-accent/85 hover:text-sidebar-accent-foreground"
                 )}
                 title={collapsed ? item.label : undefined}
               >
@@ -142,8 +142,8 @@ export default function AppSidebar({
             "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors w-full",
             collapsed ? "justify-center px-0 py-2 w-10 mx-auto" : "",
             isActive("/profile")
-              ? "bg-sidebar-primary text-sidebar-primary-foreground"
-              : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+              ? "bg-sidebar-primary text-sidebar-primary-foreground shadow-[0_0_28px_hsl(190_100%_52%_/_0.2)]"
+              : "text-sidebar-foreground/70 hover:bg-sidebar-accent/85 hover:text-sidebar-accent-foreground"
           )}
           title={collapsed ? profile.name : undefined}
         >
@@ -189,7 +189,7 @@ export default function AppSidebar({
       {/* Desktop sidebar */}
       <aside
         className={cn(
-          "hidden md:flex flex-col bg-sidebar border-r border-sidebar-border transition-all duration-300 shrink-0",
+          "hidden md:flex flex-col bg-sidebar/72 backdrop-blur-2xl border-r border-sidebar-border/80 transition-all duration-300 shrink-0",
           collapsed ? "w-16" : "w-64"
         )}
       >
@@ -200,10 +200,10 @@ export default function AppSidebar({
       {isMobileOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           <div
-            className="fixed inset-0 bg-black/50"
+            className="fixed inset-0 bg-black/65 backdrop-blur-sm"
             onClick={onMobileClose}
           />
-          <aside className="fixed left-0 top-0 bottom-0 w-72 bg-sidebar border-r border-sidebar-border z-50 flex flex-col">
+          <aside className="fixed left-0 top-0 bottom-0 w-72 bg-sidebar/88 backdrop-blur-2xl border-r border-sidebar-border/80 z-50 flex flex-col">
             <div className="flex items-center justify-between px-5 py-4 border-b border-sidebar-border">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-sidebar-primary flex items-center justify-center">
@@ -238,8 +238,8 @@ export default function AppSidebar({
                       className={cn(
                         "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors w-full",
                         isActive(item.to)
-                          ? "bg-sidebar-primary text-sidebar-primary-foreground"
-                          : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                          ? "bg-sidebar-primary text-sidebar-primary-foreground shadow-[0_0_28px_hsl(190_100%_52%_/_0.2)]"
+                          : "text-sidebar-foreground/70 hover:bg-sidebar-accent/85 hover:text-sidebar-accent-foreground"
                       )}
                     >
                       <item.icon className="w-4 h-4 shrink-0" />
@@ -256,8 +256,8 @@ export default function AppSidebar({
                 className={cn(
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors w-full",
                   isActive("/profile")
-                    ? "bg-sidebar-primary text-sidebar-primary-foreground"
-                    : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                    ? "bg-sidebar-primary text-sidebar-primary-foreground shadow-[0_0_28px_hsl(190_100%_52%_/_0.2)]"
+                    : "text-sidebar-foreground/70 hover:bg-sidebar-accent/85 hover:text-sidebar-accent-foreground"
                 )}
               >
                 <div className="w-6 h-6 rounded-full overflow-hidden shrink-0 bg-sidebar-primary flex items-center justify-center text-[10px] font-bold text-sidebar-primary-foreground">
